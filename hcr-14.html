@@ -5,9 +5,10 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="">
+   <meta name="description"
+      content="Buy the HCR-14 Collaborative Robot in UAE with High payload, fastest joint speed.Our HCR-14 cobot ensures smooth, efficient industrial operations with ease">
    <meta name="robots" content="noindex, nofollow">
-   <title> Risag Robotics || Product Details </title>
+   <title> Buy HCR-14 Collaborative Robots in UAE | RISAG Robotics</title>
    <!--Favicon img-->
    <link rel="shortcut icon" href="assets/img/logo/favicon.png">
    <!--main css-->
@@ -23,13 +24,13 @@
    <!-- fancy box -->
 
    <style>
-        label.error {
-            color: red;
-            font-size: 14px;
-            margin-top: 5px;
-            display: block;
-        }
-    </style>
+      label.error {
+         color: red;
+         font-size: 14px;
+         margin-top: 5px;
+         display: block;
+      }
+   </style>
 </head>
 
 <body>
@@ -249,34 +250,35 @@
 
                                        <div class="modal-body">
                                           <div class="error_product_msg"></div>
-                                            <form id="product_form" name="product_form"  method="post">
+                                          <form id="product_form" name="product_form" method="post">
 
-                                             <input type="hidden" name="product" class="required" value="The HCR-14"/>
+                                             <input type="hidden" name="product" class="required" value="The HCR-14" />
 
 
 
                                              <div class="form-group">
-                                                <input type="text" name="name" class="form-control required" 
-                                                   placeholder="Name" >
+                                                <input type="text" name="name" class="form-control required"
+                                                   placeholder="Name">
 
                                              </div>
 
                                              <div class="form-group">
-                                                <input type="email" name="email" class="form-control required" 
-                                                   aria-describedby="emailHelp" placeholder="Email" >
+                                                <input type="email" name="email" class="form-control required"
+                                                   aria-describedby="emailHelp" placeholder="Email">
 
                                              </div>
 
                                              <div class="form-group">
                                                 <input type="tel" class="form-control required"
-                                                   placeholder="Phone Number"  name="phone">
+                                                   placeholder="Phone Number" name="phone">
 
                                              </div>
 
-                                             <div class="g-recaptcha" data-sitekey="6Ld-GlArAAAAAJEbB1KrL2pS_nN4f2aO2Ybw7uu5"></div>
+                                             <div class="g-recaptcha"
+                                                data-sitekey="6Ld-GlArAAAAAJEbB1KrL2pS_nN4f2aO2Ybw7uu5"></div>
 
                                              <br>
-                                             <button type="submit" class="btn" >Submit</button>
+                                             <button type="submit" class="btn">Submit</button>
                                           </form>
                                        </div>
 
@@ -1059,7 +1061,8 @@
                            </li>
 
                            <li>
-                              <a href="javascript:void(0)" class="social__item social__itemfour">
+                              <a href="https://api.whatsapp.com/send?phone=+971508993781&text=Hello from RISAG Robotics!."
+                                 target="_blank" class="social__item social__itemfour">
                                  <span class="icon">
                                     <img src="assets/img/svg-icon/whatsapp.png" alt="whatsapp">
                                  </span>
@@ -1192,71 +1195,71 @@
    <!-- fancy box -->
 
    <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script src="assets/js/jquery.validate.min.js"></script>
-  <script src="assets/js/jquery.form.min.js"></script>
+   <script src="assets/js/jquery.validate.min.js"></script>
+   <script src="assets/js/jquery.form.min.js"></script>
    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
- <script>
-  (function ($) {
-    $("#product_form").validate({
-      submitHandler: function (form) {
-        var form_btn = $(form).find('button[type="submit"]');
-        var form_result_div = '#form-result';
-        // alert('AFAS')
-        Swal.fire({
-          title: 'Sending...',
-          text: 'Please wait while we send your message.',
-          allowOutsideClick: false,
-          didOpen: () => {
-            Swal.showLoading();
-          }
-        });
+   <script>
+      (function ($) {
+         $("#product_form").validate({
+            submitHandler: function (form) {
+               var form_btn = $(form).find('button[type="submit"]');
+               var form_result_div = '#form-result';
+               // alert('AFAS')
+               Swal.fire({
+                  title: 'Sending...',
+                  text: 'Please wait while we send your message.',
+                  allowOutsideClick: false,
+                  didOpen: () => {
+                     Swal.showLoading();
+                  }
+               });
 
-        form_btn.prop('disabled', true);
+               form_btn.prop('disabled', true);
 
-        $(form).ajaxSubmit({
-          url: 'send_product_mail.php',
-          dataType: 'json',
-          success: function (data) {
-            Swal.close();
+               $(form).ajaxSubmit({
+                  url: 'send_product_mail.php',
+                  dataType: 'json',
+                  success: function (data) {
+                     Swal.close();
 
-            form_btn.prop('disabled', false);
-            if (data.status === 'success') {
-                console.log('Form submitted successfully. Closing modal...');
-                form.reset(); 
-                $('#exampleModalCenter').modal('hide');  // this should now work
-                $(form).trigger('reset');
-                $(form).find('label.error').remove();
-                Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: data.message
-                });
-            } else {
+                     form_btn.prop('disabled', false);
+                     if (data.status === 'success') {
+                        console.log('Form submitted successfully. Closing modal...');
+                        form.reset();
+                        $('#exampleModalCenter').modal('hide');  // this should now work
+                        $(form).trigger('reset');
+                        $(form).find('label.error').remove();
+                        Swal.fire({
+                           icon: 'success',
+                           title: 'Success!',
+                           text: data.message
+                        });
+                     } else {
 
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: data.message
-              });
+                        Swal.fire({
+                           icon: 'error',
+                           title: 'Oops...',
+                           text: data.message
+                        });
+                     }
+                  },
+                  error: function () {
+                     Swal.close();
+                     form_btn.prop('disabled', false);
+                     Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong. Please try again later.'
+                     });
+                  }
+               });
             }
-          },
-          error: function () {
-            Swal.close();
-            form_btn.prop('disabled', false);
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Something went wrong. Please try again later.'
-            });
-          }
-        });
-      }
-    });
-  })(jQuery);
-</script>
+         });
+      })(jQuery);
+   </script>
 </body>
 
 

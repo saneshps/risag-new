@@ -5,9 +5,10 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="">
+   <meta name="description"
+      content="Contact Risag Robotics for inquiries about collaborative robots and automation solutions in UAE. Get expert assistance and support for your cobot needs.">
    <meta name="robots" content="noindex, nofollow">
-   <title> Risag Robotics || Contact Us </title>
+   <title> Best Cobots Supplier Company,UAE| Contact Us|Risag Robotics </title>
    <!--Favicon img-->
    <link rel="shortcut icon" href="assets/img/logo/favicon.png">
    <!--main css-->
@@ -20,13 +21,13 @@
    <!-- Google font -->
 
    <style>
-        label.error {
-            color: red;
-            font-size: 14px;
-            margin-top: 5px;
-            display: block;
-        }
-    </style>
+      label.error {
+         color: red;
+         font-size: 14px;
+         margin-top: 5px;
+         display: block;
+      }
+   </style>
 </head>
 
 <body>
@@ -186,7 +187,7 @@
             <div class="col-lg-8">
                <div class="form_area">
                   <!-- <form id="form"> -->
-                  <form class="form-horizontal" method="post" action="send_gmail.php" id="form" >
+                  <form class="form-horizontal" method="post" action="send_gmail.php" id="form">
 
                      <div class="row g-4">
                         <div class="col-lg-6">
@@ -198,19 +199,19 @@
                         <div class="col-lg-6">
                            <div class="form-control">
                               <label for="email">Email</label>
-                              <input type="email" name="email"  class="required" placeholder="Enter Your Email...">
+                              <input type="email" name="email" class="required" placeholder="Enter Your Email...">
                            </div>
                         </div>
                         <div class="col-lg-6">
                            <div class="form-control">
                               <label for="phone">Phone</label>
-                              <input type="tel" name="phone"  placeholder="Enter Your Number...">
+                              <input type="tel" name="phone" placeholder="Enter Your Number...">
                            </div>
                         </div>
                         <div class="col-lg-6">
                            <label id="country">Products</label>
                            <div class="select-wrapper">
-                              <select name="product" class="required" >
+                              <select name="product" class="required">
                                  <option value="" disabled selected>Products...</option>
                                  <option value="hcr-10l">The HCR-10L</option>
                                  <option value="hcr-14">The HCR-14</option>
@@ -379,7 +380,8 @@
                            </li>
 
                            <li>
-                              <a href="javascript:void(0)" class="social__item social__itemfour">
+                              <a href="https://api.whatsapp.com/send?phone=+971508993781&text=Hello from RISAG Robotics!."
+                                 target="_blank" class="social__item social__itemfour">
                                  <span class="icon">
                                     <img src="assets/img/svg-icon/whatsapp.png" alt="whatsapp">
                                  </span>
@@ -505,72 +507,72 @@
    <script src="assets/js/prism.js"></script>
    <!--main Js-->
    <script src="assets/js/main.js"></script>
-   
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script src="assets/js/jquery.validate.min.js"></script>
-  <script src="assets/js/jquery.form.min.js"></script>
+   <!-- SweetAlert2 -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
- <script>
-  (function ($) {
-    $("#form").validate({
-      submitHandler: function (form) {
-        var form_btn = $(form).find('button[type="submit"]');
-        var form_result_div = '#form-result';
-        // alert('AFAS')
-        Swal.fire({
-          title: 'Sending...',
-          text: 'Please wait while we send your message.',
-          allowOutsideClick: false,
-          didOpen: () => {
-            Swal.showLoading();
-          }
-        });
+   <script src="assets/js/jquery.validate.min.js"></script>
+   <script src="assets/js/jquery.form.min.js"></script>
 
-        form_btn.prop('disabled', true);
+   <script>
+      (function ($) {
+         $("#form").validate({
+            submitHandler: function (form) {
+               var form_btn = $(form).find('button[type="submit"]');
+               var form_result_div = '#form-result';
+               // alert('AFAS')
+               Swal.fire({
+                  title: 'Sending...',
+                  text: 'Please wait while we send your message.',
+                  allowOutsideClick: false,
+                  didOpen: () => {
+                     Swal.showLoading();
+                  }
+               });
 
-        $(form).ajaxSubmit({
-          url: 'send_gmail.php',
-          dataType: 'json',
-          success: function (data) {
-            Swal.close();
+               form_btn.prop('disabled', true);
 
-            form_btn.prop('disabled', false);
-            if (data.status === 'success') {
-                // alert('s')
-                form.reset(); 
-            //   $(form).find('.form-control').val('');
-              Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: data.message
-              });
-            } else {
-                // alert('f')
+               $(form).ajaxSubmit({
+                  url: 'send_gmail.php',
+                  dataType: 'json',
+                  success: function (data) {
+                     Swal.close();
 
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: data.message
-              });
+                     form_btn.prop('disabled', false);
+                     if (data.status === 'success') {
+                        // alert('s')
+                        form.reset();
+                        //   $(form).find('.form-control').val('');
+                        Swal.fire({
+                           icon: 'success',
+                           title: 'Success!',
+                           text: data.message
+                        });
+                     } else {
+                        // alert('f')
+
+                        Swal.fire({
+                           icon: 'error',
+                           title: 'Oops...',
+                           text: data.message
+                        });
+                     }
+                  },
+                  error: function () {
+                     Swal.close();
+
+                     form_btn.prop('disabled', false);
+                     Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong. Please try again later.'
+                     });
+                  }
+               });
             }
-          },
-          error: function () {
-            Swal.close();
-
-            form_btn.prop('disabled', false);
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Something went wrong. Please try again later.'
-            });
-          }
-        });
-      }
-    });
-  })(jQuery);
-</script>
+         });
+      })(jQuery);
+   </script>
 </body>
 
 
