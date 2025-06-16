@@ -68,33 +68,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $mail->isHTML(true);
             $mail->Subject = 'New product Enquiry From Risag';
-            $mail->Body = '
-                <div style="max-width:600px;margin:0 auto;border:1px solid #ddd;padding:20px;font-family:sans-serif;background:#f9f9f9;">
-                    <h2 style="color:#333;border-bottom:1px solid #ddd;padding-bottom:10px;">📩 ' .  htmlspecialchars($subject) . '</h2>
-                    <table cellpadding="10" cellspacing="0" width="100%" style="color:#333;">
-                        <tr>
-                            <td width="30%"><strong>Name:</strong></td>
-                            <td>' . htmlspecialchars($name) . '</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Email:</strong></td>
-                            <td>' . htmlspecialchars($email) . '</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Phone:</strong></td>
-                            <td>' . htmlspecialchars($phone) . '</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Product Name:</strong></td>
-                            <td>' . htmlspecialchars($product) . '</td>
-                        </tr>
+            // $mail->Body = '
+            //     <div style="max-width:600px;margin:0 auto;border:1px solid #ddd;padding:20px;font-family:sans-serif;background:#f9f9f9;">
+            //         <h2 style="color:#333;border-bottom:1px solid #ddd;padding-bottom:10px;">📩 ' .  htmlspecialchars($subject) . '</h2>
+            //         <table cellpadding="10" cellspacing="0" width="100%" style="color:#333;">
+            //             <tr>
+            //                 <td width="30%"><strong>Name:</strong></td>
+            //                 <td>' . htmlspecialchars($name) . '</td>
+            //             </tr>
+            //             <tr>
+            //                 <td><strong>Email:</strong></td>
+            //                 <td>' . htmlspecialchars($email) . '</td>
+            //             </tr>
+            //             <tr>
+            //                 <td><strong>Phone:</strong></td>
+            //                 <td>' . htmlspecialchars($phone) . '</td>
+            //             </tr>
+            //             <tr>
+            //                 <td><strong>Product Name:</strong></td>
+            //                 <td>' . htmlspecialchars($product) . '</td>
+            //             </tr>
                     
                        
-                    </table>
-                    <p style="margin-top:30px;font-size:12px;color:#888;">This message was sent from the contact form on <a href="https://risag.com" style="color:#0066cc;">risag.com</a>.</p>
-                </div>
-            ';
+            //         </table>
+            //         <p style="margin-top:30px;font-size:12px;color:#888;">This message was sent from the contact form on <a href="https://risag.com" style="color:#0066cc;">risag.com</a>.</p>
+            //     </div>
+            // ';
+            $message = isset($_POST['message']) ? trim($_POST['message']) : 'Product Enquiry';
+            $product = isset($_POST['product']) ? trim($_POST['product']) : '';
+            $productRow = '';
+            if (!empty($product)) {
+                $productRow = 
+                '<tr>
+                    <td  style="text-align: left; padding-left: 30px;padding-bottom: 9px; font-size: 14px;"><strong>Product Intrested :</strong></td>
+                    <td>' . htmlspecialchars($product) . '</td>
+                </tr>';
+            }
+            $template = file_get_contents('email-template.php');
+            $replacements = [
+                '{{name}}' => htmlspecialchars($name),
+                '{{email}}' => htmlspecialchars($email),
+                '{{phone}}' => htmlspecialchars($phone),
+                // '{{product}}' => htmlspecialchars($product),
+                '{{productRow}}' => $productRow,
+                '{{message}}' => htmlspecialchars($message),
+                '{{subject}}' => htmlspecialchars($subject),
+            ];
 
+            foreach ($replacements as $key => $value) {
+                $template = str_replace($key, $value, $template);
+            }
+
+            $mail->Body = $template;
             $mail->send();
             // echo 'Message sent successfully.';
             echo json_encode([
