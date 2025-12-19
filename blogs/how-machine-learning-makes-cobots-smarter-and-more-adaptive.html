@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Find out how ML transforms cobots into intelligent collaborators that learn, adapt, and improve productivity. Discover why businesses are upgrading now.">
+    <title>  How Smarter Cobots Boost Productivity With Machine Learning  </title>
+    <!--Favicon img-->
+    <link rel="canonical"
+        href="https://risagrobotics.com/blogs/how-machine-learning-makes-cobots-smarter-and-more-adaptive" />
+
+    <link rel="shortcut icon" href="../assets/img/logo/favicon.png">
+    <!--main css-->
+    <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/main.css"> -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Google font -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-490B9273C3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-490B9273C3');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5WZXTT4T');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WZXTT4T" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <section class="header-top">
+        <div class="container">
+            <div class="information">
+                <img src="../assets/img/icons/phone-new.png" alt="">
+                <a href="tel:+971565442665">+971 56 544 2665</a>
+                <img src="../assets/img/icons/email-new.png" alt="">
+                <a href="mailto:info@risag.ae">info@risag.ae</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header top Here -->
+    <section class="header-section">
+        <div class="header-testting-wrap">
+            <header class="header">
+                <div class="container">
+                    <div class="header-testting-inner d-flex align-items-center justify-content-between">
+                        <!-- Logo -->
+                        <div class="header-item item-left">
+                            <div class="logo-menu">
+                                <a href="../index" class="logo d-xl-block d-none">
+                                    <img src="../assets/img/logo/logo-black.png" alt="logo">
+                                </a>
+                                <a href="../index" class="logo scrll d-xl-block">
+                                    <img class="phn" src="../assets/img/logo/logo-white.png" alt="logo">
+                                    <img class="desk" src="../assets/img/logo/logo-white.png" alt="logo">
+                                </a>
+                                <a href="../index" class="logo logo-small d-xl-none">
+                                    <img src="../assets/img/logo/logo-black.png" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Menu Start -->
+                        <div class="header-item">
+                            <div class="menu-overlay"></div>
+                            <nav class="menu">
+                                <!-- Mobile Menu Head -->
+                                <div class="mobile-menu-head">
+                                    <div class="go-back">
+                                        <i class="material-symbols-outlined">
+                                            arrow_back_ios
+                                        </i>
+                                        <!-- <img src="../assets/img/logo/logo-white.png" alt="logo"> -->
+                                    </div>
+                                    <div class="current-menu-title"></div>
+                                    <div class="mobile-menu-close">&times;</div>
+                                </div>
+                                <!-- Mian Menu -->
+                                <ul class="menu-main">
+                                    <li class="menu-item-has-children">
+                                        <a href="../index" class="menu-mitem d-flex align-items-center"> Home </a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="../about" class="menu-mitem d-flex align-items-center"> About </a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a class="menu-mitem d-flex align-items-center">
+                                            Products
+                                            <i class="material-symbols-outlined">
+                                                expand_more
+                                            </i>
+                                        </a>
+                                        <div class="sub-menu single-column-menu">
+                                            <ul>
+                                                <li><a href="../hcr-10L">The HCR-10L</a></li>
+                                                <li><a href="../hcr-14">The HCR-14</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="../gallery" class="menu-mitem d-flex align-items-center"> Gallery </a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="../blog" class="menu-mitem d-flex align-items-center"> Blogs </a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="../contact" class="menu-mitem d-flex align-items-center"> Contact </a>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Menu End -->
+                        <div class="header-item item-righ d-flex align-items-center justify-content-center">
+                            <div class="menu__components">
+
+
+                                <a href="../contact" class="cmn--btn">
+                                    <span>
+                                        Get In Touch
+                                    </span>
+                                </a>
+                            </div>
+                            <!-- Mobile Menu Tigger -->
+                            <div class="mobile-menu-trigger">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </section>
+    <!-- Header top End -->
+
+    <!-- Banner Here -->
+    <section class="banner__section breadcumnd__banner">
+        <!--Mask-->
+        <div class="banner__bgmask">
+            <img src="../assets/img/elements/box-element.png" alt="mask">
+        </div>
+        <!--Mask-->
+        <!--Container-->
+        <div class="container">
+            <div class="breadcumnd__wrapper">
+                <div class="row g-4  justify-content-between align-items-end">
+                    <!--col-->
+                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
+                        <div class="breadcumnd__content">
+                            <h1 class="title">
+                                Blog Details
+                            </h1>
+                            <ul class="breadcumnd__list">
+                                <li>
+                                    <a href="index">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <i class="material-symbols-outlined">
+                                            chevron_right
+                                        </i>
+                                    </span>
+                                </li>
+                                <li class="sucess">
+                                    Blog Details
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--Container-->
+    </section>
+    <!-- Banner End -->
+
+    <!-- Blog Details Here -->
+    <section class="service__section bg__white pt-120 pb-80">
+        <!--container-->
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-8 col-xl-8 col-lg-8">
+                    <div class="service__details__left blog__details__left">
+                        <div class="machine__learning__box mb-5">
+                            <div class="details__thumb">
+                                <img src="../assets/img/blogs/how-machine-learning-makes-cobots-smarter-and-more-adaptive.webp"
+                                    alt="details">
+                            </div>
+                            <div class="content">
+                                <h1 class="headtext">
+                                    How Machine Learning Makes Cobots Smarter and More Adaptive?   </h1>
+                                <ul class="admin__wrap">
+                                    <li>
+                                        <span class="icon">
+                                            <i class="material-symbols-outlined">
+                                                event_available
+                                            </i>
+                                        </span>
+                                        <span>
+                                            15-12-2025
+                                        </span>
+                                    </li>
+
+                                </ul>
+                                <p class="text1">  </p>
+
+                                <p class="pb__20">
+                               Collaborative robots otherwise termed as Cobots have made a drastic transformation  in today’s workplaces
+                                by providing versatile, safe and effortless automation. In contrast to the conventional industrial robots
+                                 that function at the back of cages and that need special programs,
+                                  <a href="https://risagrobotics.com/" target="_blank" style="color: #000;"> <b>  Cobots </b></a> are designed and developed
+                                  to work along with humans. But what has to be understood is that the thing that honestly unlocked
+                                   their potential is not just the mechanical design but its Machine learning. 
+
+                                </p>
+                                <p class="pb__20">
+                               What is Machine learning? It’s the technology that will enable the cobots on how to understand things based on experience,
+                                be flexible to variations and improve continuously on performance in due course of time. With the advancement of machine learning,
+                                the abilities of Cobots also advance. Cobots are becoming more and more smart, fast and becoming more effective
+                                 across various industries like manufacturing, healthcare, logistics and retail. Let’s discuss
+                                  here on how machine learning will reshape what all<a href="https://risagrobotics.com/" target="_blank" style="color: #000;"> <b> cobots </b></a> can do and why it is important. 
+
+
+                                </p>
+                                <h2 class="headtext">
+                                 1. Smarter Perception: Seeing and Understanding the Environment
+
+                                </h2>
+                            <p class="text1">  For safe and effective collaboration of cobots, a crystal clear understanding of the area around
+                                 its surrounding is required. Conventional cobots depend on firm programming and paths that are
+                                  predefined which are seen to work effectively in environments that are structured but seen to
+                                   be failing when there is a change in condition. Machine learning specifically through the computer version enables the cobots to:
+
+                            </p>
+
+                            <h4>   Recognize objects and classify parts </h4>
+                             
+                            <p class="text1">  Deep learning will help the cobots to identify any item even if they are appearing in another orientation,
+                                 lighting condition or size. This will definitely enhance the possibility of tasks like picking the bins,
+                                  sorting and assembly. 
+
+                             </p>
+                             <h4>  Track human movement </h4>
+                              <p class="text1"> ML powered sensors will allow the cobot to predict any human motion which will enable seamless and safe 
+                                collaboration. Without being stopped completely upon the approach of a human, state-of-the-art cobots
+                                 will try to slow down, do path adjustment or even reposition themselves using their intelligence. 
+
+                              </p>
+
+<h4>  Understand unstructured environments </h4>
+
+<p class="text1">  Be it a workspace that is cluttered or an assembly line they keep moving, machine learning
+     will help the cobots to understand contextual cues, identify the anomalies and function
+      effectively without having the need for continuous human intervention. 
+
+</p>
+
+<p class="text1"> What’s the result? <a href="https://risagrobotics.com/" target="_blank" style="color: #000;"> <b> Cobots </b> </a> that don't work with instructions, but perform in accordance to their observation, interpretation and response. </p>
+
+<h2> 2. Adaptive Learning: Improving Performance Over Time </h2>
+<p class="text1">  Machine learning will help the cobots to improve their performance based on their experience similar
+     to a human operator who learns from the job. This is very much effective in processes where change and uncertainty are likely to occur. 
+
+</p>
+
+<h4>  Reinforcement learning for motion optimization </h4>
+
+<p class="text1">  Reinforcement learning will permit the cobots to work on various movements and understand which of their
+     actions are likely to give the best results. In due course of time, they will find out the paths that
+      are most effective, the angles as well as the speeds when it comes to repetitive tasks such as:
+
+</p>
+<ul>
+    <li> Packing and palletizing  </li>
+    <li> Welding jobs  </li>
+    <li> Assembly & fastening  </li>
+    <li> Spray painting  </li>
+</ul>
+
+<p class="text1">    This will help to lessen the cycle time, enhance the precision, and improve consistency.</p>
+
+<h4>  Learning from demonstrations </h4>
+
+<p class="text1">  In lieu of a complex code requirement, cobots equipped with Machine learning are capable of
+     learning through observation - they observe how a human demonstrates the particular task
+      which is otherwise termed programming by demonstration. Cobots are capable of recording 
+      the motions, identifying the patterns and generalizing the steps involved.’ 
+
+</p>
+<p class="text1">  This will make automation more better accessible for groups even without any extensive robotic expertise.  </p>
+<h4>   Continuous improvement through feedback </h4>
+
+<p class="text1">  Cobots are capable of analyzing the data from sensors - like force, torque and vibration and they do realtime adjustments. 
+    If they feel something is wrong due to any misalignment, cobots take in the force put on or hold it in order to verify. 
+
+</p>
+<p class="text1"> To put it in short, machine learning will turn cobots from static to dynamic workers who are capable of developing with requirements that are changing.  </p>
+
+<h2> 3. Greater Flexibility for High-Mix, Low-Volume Production </h2>
+
+<p class="text1">  Handling of product variations is one of the major challenges faced during the manufacturing process.
+     It’s easy for conventional robots to excel when it comes to mass production, but the struggle lies
+      in the variations that are required often. Through machine learning, cobots are capable of managing 
+      the transitions smoothly by: 
+
+</p>
+<h4>  Automatic toolpath generation </h4>
+<p class="text1">  Cobots are capable of identifying the geometry of the workplace and create motion paths without having 
+    the need for reprogramming manually with the help of machine learning computer vision. 
+
+</p>
+
+<h4>  Rapid task switching </h4>
+<p class="text1">  Cobots have the advantage of being able to store multiple task models and later make use of the ML classifiers
+     to understand what process will perform what task with respect to the items given to them. 
+
+</p>
+<h4>  On-the-fly adjustments </h4>
+
+<p class="text1">  If any of the components change slightly owing to the tolerances or changes in supplier,
+     machine learning will permit the cobots to automatically compensate, lessening the scrap
+      and enhancing the quality. This adaptability will help a lot to transform the industries 
+      like customised manufacturing, electronics and automobile aftermarket where each day is different.  
+
+</p>
+
+<h2> 4. Enhanced Safety and Predictive Maintenance </h2>
+
+<p class="text1">  The main reasons why most of the businesses prefer cobots is due to its enhanced safety. 
+    Safety in cobots is enhanced with the help of machine learning as this will predict any
+     risk and helps to avoid issues before it happens.  
+
+</p>
+
+<h4>  Predictive safety responses </h4>
+<p class="text1">  ML algorithms are capable of detecting patterns that will precede any unsafe situations
+     like uncommon human movement or uncommon tool behavior. The cobots will then adjust the speed,
+      generate alternative paths of motion or will disengage for sometime. 
+
+</p>
+
+<h4>  Predictive maintenance </h4>
+
+<p class="text1">  By carefully monitoring parameters like power consumption, performance data, temperature and vibration with machine learning, Cobots are capable of: </p>
+<ul>
+    <li> Predicting the component wear </li>
+    <li> Scheduling the maintenance proactively </li>
+    <li> Preventing the downtime </li>
+</ul>
+
+<p class="text1">  This will help to shift upkeep from reactive to strategic, thereby helping to save costs and enhancing the uptime. </p>
+
+<h2> 5. Human-Robot Collaboration Becomes Natural </h2>
+<p class="text1">  Machines will also enhance the understanding of human behavior by cobots and their respective intentions.
+      With the help of algorithms, cobots can be trained on patterns of human motion and anticipate actions as well.
+       They can also respond to these actions with proper assistance.  
+
+</p>
+
+<p class="text1">  For example: </p>
+<ul>
+    <li>  In assembly jobs, a cobot can hold a part in place as early as it identifies a human anticipating a tool. </li>
+    <li>  In the case of logistics, a <a href="https://risagrobotics.com/" target="_blank" style="color: #000;"> <b>  cobot</b> </a>can reposition by itself near to a human worker to share the workload. </li>
+    <li>  In the healthcare sector, Machine Learning enabled cobots are capable of gently adjusting their grip depending on the movement of the patient. </li>
+</ul>
+<p class="text1">  This will create an environment where robots augment the abilities of humans rather than replacing them. </p>
+
+<h2> The Future: Cobots as Learning Partners </h2>
+<p class="text1">  There is continuous growth in machine learning, the next generation of cobots are capable of: </p>
+
+<ul>
+    <li>  collaborating intuitively without any detailed instructions  </li>
+    <li>  Self-correcting the mistakes and learn the new skills   </li>
+    <li>  adapting to production changes   </li>
+    <li>  personalizing their behavior to each workers  </li>
+    <li>  integrating seamlessly into data-driven smart factories  </li>
+    
+</ul>
+<p class="text1">  Machine learning is not merely about creating cobots smarter—it’s making them good partners in productivity, 
+    safety, as well as innovation. If you wish to know more about Cobots or wish to have one for yourself,
+     contact <a href="https://risagrobotics.com/" target="_blank" style="color: #000;">  <b>  RISAG Robotics </b> </a> for all your Cobot requirements in the Middle East.. 
+
+</p>
+
+                              
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4">
+                    <div class="service__details__right">
+
+                        <div class="common__item">
+                            <h5 class="title">
+                                Recent Blogs
+                            </h5>
+                            <div class="recent__wrap">
+                                <a href="introducing-the-hcr-10l-a-long-reach-collaborative-robot-for-smart-manufacturing"
+                                    class="recent__items">
+                                    <span class="thumb">
+                                        <img src="../assets/img/blogs/introducing-the-hcr-10l-a-long-reach-collaborative-robot-for-smart-manufacturing.jpg"
+                                            alt="img">
+                                    </span>
+                                    <div class="recent__content">
+                                        <h6>
+                                            Introducing the HCR-10L: A Long-Reach Collaborative Robot for Smart
+                                            Manufacturing
+                                        </h6>
+                                        <span class="recent__btn">
+                                            <span>
+                                                Read More
+                                            </span>
+                                            <span class="icon">
+                                                <i class="material-symbols-outlined">
+                                                    arrow_right_alt
+                                                </i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </a>
+
+                                <a href="getting-to-know-the-hcr-14-a-heavy-duty-cobot-for-tough-industrial-tasks"
+                                    class="recent__items">
+                                    <span class="thumb">
+                                        <img src="../assets/img/blogs/Heavy-duty-cobots.jpg" alt="img">
+                                    </span>
+                                    <div class="recent__content">
+                                        <h6>
+                                            Getting to Know the HCR-14: A Heavy-Duty Cobot for Tough Industrial Tasks
+                                        </h6>
+                                        <span class="recent__btn">
+                                            <span>
+                                                Read More
+                                            </span>
+                                            <span class="icon">
+                                                <i class="material-symbols-outlined">
+                                                    arrow_right_alt
+                                                </i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </a>
+                                 <a href="ai-and-cobots-the-future-of-smart-manufacturing"
+                                    class="recent__items">
+                                    <span class="thumb">
+                                        <img src="../assets/img/blogs/AI and Cobots The Future of Smart Manufacturing.jpg" alt="img">
+                                    </span>
+                                    <div class="recent__content">
+                                        <h6>
+                                               AI and Cobots: The Future of Smart Manufacturing
+                                        </h6>
+                                        <span class="recent__btn">
+                                            <span>
+                                                Read More
+                                            </span>
+                                            <span class="icon">
+                                                <i class="material-symbols-outlined">
+                                                    arrow_right_alt
+                                                </i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </a>
+                                <a href="how-are-cobots-transforming-manufacturing-industries" class="recent__items">
+                                    <span class="thumb">
+                                        <img src="../assets/img/blogs/How are Cobots transforming manufacturing industries.jpg"
+                                            alt="img">
+                                    </span>
+                                    <div class="recent__content">
+                                        <h6>
+                                            How Are Cobots Transforming Manufacturing </h6>
+                                        <span class="recent__btn">
+                                            <span>
+                                                Read More
+                                            </span>
+                                            <span class="icon">
+                                                <i class="material-symbols-outlined">
+                                                    arrow_right_alt
+                                                </i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </a>
+                                <a href="how-collaborative-robots-can-improve-productivity-in-your-industry"
+                                    class="recent__items">
+                                    <span class="thumb">
+                                        <img src="../assets/img/blogs/How Collaborative Robots can improve Productivity in your Industry.jpg"
+                                            alt="img">
+                                    </span>
+                                    <div class="recent__content">
+                                        <h6>
+                                            How Collaborative Robots Can Improve productivity </h6>
+                                        <span class="recent__btn">
+                                            <span>
+                                                Read More
+                                            </span>
+                                            <span class="icon">
+                                                <i class="material-symbols-outlined">
+                                                    arrow_right_alt
+                                                </i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--container-->
+    </section>
+    <!-- Blog Details End -->
+
+     <!-- Footer Here -->
+   <footer class="footer__section">
+      <div class="social-media-icon">
+         <a class="wa-icon" href="https://api.whatsapp.com/send?phone=+971508993781&text=Hello from RISAG Robotics!."> <img
+               src="../assets/img/icons/whatsapp-new.png" alt=""></a>
+         <a href="tel:+971565442665"> <img src="../assets/img/icons/phone-new.png" alt=""></a>
+         <a href="mailto:info@risag.ae"> <img src="../assets/img/icons/email-new.png" alt=""></a>
+
+      </div>
+      <div class="container">
+         <div class="footer__wrapper">
+            <div class="footer__top">
+               <div class="row g-5">
+                  <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-10 col-sm-6">
+                     <div class="footer__widget">
+                        <div class="widget__head">
+                           <a href="index" class="footer__logo">
+                              <img src="../assets/img/logo/logo-white.png" alt="logo">
+                           </a>
+                        </div>
+                        <p class="pb__20">
+                           The leading Robotics supplier of the UAE, offering advanced collaborative robots.
+                        </p>
+                        <ul class="social">
+                           <li>
+                              <a href="https://www.facebook.com/people/RISAG-Robotics/61577308035935/"
+                                 class="social__item" target="_blank">
+                                 <span class="icon">
+                                    <img src="../assets/img/svg-icon/facebook.png" alt="facebook">
+                                 </span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="https://www.instagram.com/risag_robotics/" class="social__item social__itemtwo" target="_blank">
+                                 <span class="icon">
+                                    <img src="../assets/img/svg-icon/instagram.svg" alt="instagram">
+                                 </span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="https://www.linkedin.com/company/risag-robotics/about/"
+                                 class="social__item social__itemfour" target="_blank">
+                                 <span class="icon">
+                                    <img src="../assets/img/svg-icon/linkedin.png" alt="linkedin">
+                                 </span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="https://x.com/RisagRobotics"
+                                 class="social__item social__itemfour" target="_blank">
+                                 <span class="icon">
+                                    <img src="../assets/img/svg-icon/twitter.svg" alt="twitter">
+                                 </span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="https://www.youtube.com/@RisagRobotics" class="social__item social__itemthree" target="_blank">
+                                 <span class="icon">
+                                    <img src="../assets/img/svg-icon/youtube.png" alt="youtube">
+                                 </span>
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="https://api.whatsapp.com/send?phone=+971508993781&text=Hello from RISAG Robotics!."
+                                 target="_blank" class="social__item social__itemfour">
+                                 <span class="icon">
+                                    <img src="../assets/img/svg-icon/whatsapp.png" alt="whatsapp">
+                                 </span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+
+                  <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-0 col-sm-0"></div>
+
+                  <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <div class="footer__widget">
+                        <div class="widget__head">
+                           <h4>
+                              Quick Links
+                           </h4>
+                        </div>
+                        <div class="widget__link">
+                           <a href="about" class="link">
+                              About us
+                           </a>
+                           <a href="gallery" class="link">
+                              Gallery
+                           </a>
+                           <a href="blog" class="link">
+                              Blogs
+                           </a>
+                           <a href="contact" class="link">
+                              Contact Us
+                           </a>
+
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <div class="footer__widget">
+                        <div class="widget__head">
+                           <h4>
+                              Contact
+                           </h4>
+                        </div>
+                        <div class="widget__link">
+                           <a class="footer__contact__items">
+                              <span class="icon iconthree">
+                                 <span class="material-symbols-outlined">
+                                    pin_drop
+                                 </span>
+                              </span>
+                              <span class="fcontact__content">
+                                 Risag Robotics <br>
+                                 OFFICE NO. LV-27D, PO BOX 42167, <br>
+                                 HAMRIYAH FREE ZONE, PHASE 2, <br>
+                                 Sharjah, UAE
+                              </span>
+                           </a>
+
+                           <a href="tel:+971565442665" class="footer__contact__items">
+                              <span class="icon">
+                                 <i class="material-symbols-outlined">
+                                    add_call
+                                 </i>
+                              </span>
+                              <span class="fcontact__content">
+                                 +971 56 544 2665
+                              </span>
+                           </a>
+                           <a href="mailto:info@risag.ae" class="footer__contact__items">
+                              <span class="icon icontwo">
+                                 <i class="material-symbols-outlined">
+                                    mark_as_unread
+                                 </i>
+                              </span>
+                              <span class="fcontact__content">
+                                 <span class="__cf_email__" data-cfemail="45203d242835292005203d24283529206b262a28">
+                                    info@risag.ae </span>
+                              </span>
+                           </a>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <div class="footer__bottom">
+         <p>
+            Copyright &copy;2025 <a href="https://risag.ae" class="intellicon"> Risag Robotics </a>. Designed By
+            <a href="https://girafcreatives.com/in" target="_blank" class="theme">girafcreatives</a>
+         </p>
+      </div>
+      <!--footer mask-->
+      <div class="footer__mask">
+         <img src="../assets/img/elements/box-element.png" alt="mask">
+      </div>
+      <!--footer mask-->
+   </footer>
+   <!-- Footer End -->
+
+    <!--Jquery 3 6 0 Min Js-->
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="/assets/js/jquery-3.6.0.min.js"></script> -->
+
+    <!--Bootstrap bundle Js-->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <!--Viewport Jquery Js-->
+    <script src="../assets/js/viewport.jquery.js"></script>
+    <!--Odometer min Js-->
+    <script src="../assets/js/odometer.min.js"></script>
+    <!--Magnifiw Popup Js-->
+    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+    <!--Wow min Js-->
+    <script src="../assets/js/wow.min.js"></script>
+    <!--Owl carousel min Js-->
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <!--Prijm Js-->
+    <script src="../assets/js/prism.js"></script>
+    <!--main Js-->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+
+
+</html>
