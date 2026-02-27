@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Planning to deploy a collaborative robot? Use this complete cobot
+risk assessment checklist to ensure safety, compliance, and smooth human-robot
+interaction." />
+  <title>How to Conduct a Risk Assessment Before Deploying a Cobot</title>
+  <!--Favicon img-->
+  <link rel="canonical" href="https://risagrobotics.com/blogs/risk-assessment-checklist-before-deploying-a-cobot" />
+
+  <link rel="shortcut icon" href="../assets/img/logo/favicon.png" />
+  <!--main css-->
+  <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+  <!-- <link rel="stylesheet" href="../assets/css/main.css"> -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Google font -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-490B9273C3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-490B9273C3");
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js",
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-5WZXTT4T");
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WZXTT4T" height="0" width="0"
+      style="display: none; visibility: hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <section class="header-top">
+    <div class="container">
+      <div class="information">
+        <img src="../assets/img/icons/phone-new.png" alt="" />
+        <a href="tel:+971565442665">+971 56 544 2665</a>
+        <img src="../assets/img/icons/email-new.png" alt="" />
+        <a href="mailto:info@risag.ae">info@risag.ae</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Header top Here -->
+  <section class="header-section">
+    <div class="header-testting-wrap">
+      <header class="header">
+        <div class="container">
+          <div class="header-testting-inner d-flex align-items-center justify-content-between">
+            <!-- Logo -->
+            <div class="header-item item-left">
+              <div class="logo-menu">
+                <a href="../index" class="logo d-xl-block d-none">
+                  <img src="../assets/img/logo/logo-black.png" alt="logo" />
+                </a>
+                <a href="../index" class="logo scrll d-xl-block">
+                  <img class="phn" src="../assets/img/logo/logo-white.png" alt="logo" />
+                  <img class="desk" src="../assets/img/logo/logo-white.png" alt="logo" />
+                </a>
+                <a href="../index" class="logo logo-small d-xl-none">
+                  <img src="../assets/img/logo/logo-black.png" alt="logo" />
+                </a>
+              </div>
+            </div>
+            <!-- Menu Start -->
+            <div class="header-item">
+              <div class="menu-overlay"></div>
+              <nav class="menu">
+                <!-- Mobile Menu Head -->
+                <div class="mobile-menu-head">
+                  <div class="go-back">
+                    <i class="material-symbols-outlined"> arrow_back_ios </i>
+                    <!-- <img src="../assets/img/logo/logo-white.png" alt="logo"> -->
+                  </div>
+                  <div class="current-menu-title"></div>
+                  <div class="mobile-menu-close">&times;</div>
+                </div>
+                <!-- Mian Menu -->
+                <ul class="menu-main">
+                  <li class="menu-item-has-children">
+                    <a href="../index" class="menu-mitem d-flex align-items-center">
+                      Home
+                    </a>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="../about" class="menu-mitem d-flex align-items-center">
+                      About
+                    </a>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a class="menu-mitem d-flex align-items-center">
+                      Products
+                      <i class="material-symbols-outlined"> expand_more </i>
+                    </a>
+                    <div class="sub-menu single-column-menu">
+                      <ul>
+                        <li><a href="../hcr-10L">The HCR-10L</a></li>
+                        <li><a href="../hcr-14">The HCR-14</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="../gallery" class="menu-mitem d-flex align-items-center">
+                      Gallery
+                    </a>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="../blog" class="menu-mitem d-flex align-items-center">
+                      Blogs
+                    </a>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="../contact" class="menu-mitem d-flex align-items-center">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- Menu End -->
+            <div class="header-item item-righ d-flex align-items-center justify-content-center">
+              <div class="menu__components">
+                <a href="../contact" class="cmn--btn">
+                  <span> Get In Touch </span>
+                </a>
+              </div>
+              <!-- Mobile Menu Tigger -->
+              <div class="mobile-menu-trigger">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </section>
+  <!-- Header top End -->
+
+  <!-- Banner Here -->
+  <section class="banner__section breadcumnd__banner">
+    <!--Mask-->
+    <div class="banner__bgmask">
+      <img src="../assets/img/elements/box-element.png" alt="mask" />
+    </div>
+    <!--Mask-->
+    <!--Container-->
+    <div class="container">
+      <div class="breadcumnd__wrapper">
+        <div class="row g-4 justify-content-between align-items-end">
+          <!--col-->
+          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
+            <div class="breadcumnd__content">
+              <h1 class="title">Blog Details</h1>
+              <ul class="breadcumnd__list">
+                <li>
+                  <a href="index"> Home </a>
+                </li>
+                <li>
+                  <span class="icon">
+                    <i class="material-symbols-outlined"> chevron_right </i>
+                  </span>
+                </li>
+                <li class="sucess">Blog Details</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Container-->
+  </section>
+  <!-- Banner End -->
+
+  <!-- Blog Details Here -->
+  <section class="service__section bg__white pt-120 pb-80">
+    <!--container-->
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-8 col-xl-8 col-lg-8">
+          <div class="service__details__left blog__details__left">
+            <div class="machine__learning__box mb-5">
+              <div class="details__thumb">
+                <img src="../assets/img/blogs/risk-assessment-checklist-before-deploying-a-cobot.webp" alt="details" />
+              </div>
+              <div class="content">
+                <h1 class="headtext">
+                  Risk Assessment Checklist Before Deploying a Cobot
+                </h1>
+                <ul class="admin__wrap">
+                  <li>
+                    <span class="icon">
+                      <i class="material-symbols-outlined">
+                        event_available
+                      </i>
+                    </span>
+                    <span> 20-02-2026 </span>
+                  </li>
+                </ul>
+
+                <p class="pb__20">
+                  Collaborative Robots which are widely known as Cobots are
+                  changing the modern manufacturing and industrial
+                  environments by working with humans like partners. Before
+                  putting a cobot into work it is important to conduct a
+                  thorough risk assessment which is critical and it ensures
+                  safety, efficiency and compliance of the cobot. This blog
+                  will provide a comprehensive checklist to guide businesses
+                  through safe and effective cobot roll out.
+                </p>
+                <h4 class="headtext">
+                  What Is a Risk Assessment Before Deploying a Cobot?
+                </h4>
+                <p class="pt__15">
+                  A risk assessment before deploying a Cobot is a systematic
+                  evaluation of potential hazards with installing and
+                  operating it in a workplace.
+                  <a href="https://risagrobotics.com/" style="color: #9b9b9b">Cobots</a>
+                  are not like the traditional industrial robots. Cobots are
+                  made to share workspace with humans which makes safety
+                  analysis even more important.
+                </p>
+
+                <p class="pt__15">
+                  To provide frameworks for ensuring safe deployment
+                  businesses must follow structured evaluation processes like
+                  international standards such as ISO 12100 (Risk Assessment
+                  and Risk Reduction) and ISO 10218 (Safety Requirements for
+                  Industrial Robots), along with ISO/TS 15066 (Cobot safety)
+                  to minimize operational and safety risks of the Cobot.
+                </p>
+
+                <h6 class="headtext pt__15">Hazard Identification</h6>
+
+                <p class="pb__20">
+                  This involves identifying all possible risks associated with
+                  the cobot’s operation. Hazards may include pinch points,
+                  crushing risks, unexpected movements, electrical risks or
+                  tool related dangers.
+                </p>
+
+                <h6 class="headtext">Risk Analysis and Evaluation</h6>
+                <p class="pb__20">
+                  If a business finds any hazards in the cobot, the potential
+                  severity must be analyzed because this helps the cobot to
+                  understand and prioritise which risk requires immediate
+                  action and which can be managed by safety measures.
+                </p>
+
+                <h6 class="headtext">Risk Mitigation Planning</h6>
+                <p class="pb__20">
+                  After the team finishes analyzing risks inside the cobot,
+                  they should take appropriate measures to control the cobot
+                  like installing physical safeguards, software based safety
+                  features, employee training and compliance documentation.
+                </p>
+
+                <h4 class="headtext">
+                  Why Risk Assessment Is Essential for Cobot Deployment
+                </h4>
+
+                <p class="pt__15">
+                  If a business deploys Cobots without proper planning, it can
+                  lead to workplace accidents, legal penalties, wastage of
+                  time and productivity losses. A structured checklist
+                  ensures:
+                </p>
+
+                <ul>
+                  <li> Worker safety</li>
+                  <li> Legal compliance</li>
+                  <li> Smooth human-robot collaboration</li>
+                  <li> Long-term operational stability</li>
+                  <li> Protection of company assets</li>
+                </ul>
+
+                <p>
+                  Risk assessment is a strategic investment to perform safe
+                  automation.
+                </p>
+
+                <h4 class="headtext pt__15">
+                  Risk Assessment Checklist Before Deploying a Cobot
+                </h4>
+                <p class="pb__20">
+                  Below is a comprehensive checklist with detailed
+                  explanations for each key factor for deploying a Cobot
+                  safely:
+                </p>
+
+                <h6 class="headtext">
+                  Define the Application and Task Scope
+                </h6>
+
+                <p class="pb__20">
+                  The Cobot should have a specific task of what it does e.g.
+                  assembly, packaging, welding, material handling or
+                  inspection but each task carries a unique kind of risk. A
+                  precise task definition prevents misalignment between robot
+                  capabilities and operational requirements.
+                </p>
+
+                <h6 class="headtext">Workspace Evaluation</h6>
+                <p class="pb__20">
+                  Cobots operate on the physical workspace, so it is important
+                  to consider floor conditions, lighting, temperature,
+                  ventilation and layout and also ensure that there is space
+                  clearance required for the robot around it as this will
+                  prevent the cobot from accidental collisions. Poor workspace
+                  planning can increase the risk of human injury and reduce
+                  productivity.
+                </p>
+
+                <h6 class="headtext">Human-Robot Interaction Analysis</h6>
+               <p class="pb__20">
+                  Since Cobots share space with human workers, they will start
+                  analyzing how humans interact with the robot. Will the human
+                  worker load materials manually? Will humans work side by
+                  side continuously? And it will start to identify scenarios
+                  where accidental contact could occur and ensure speed and
+                  force limits comply with ISO / TS 15066 standards.
+                </p>
+
+                <h6 class="headtext">Payload and Tooling Assessment</h6>
+               <p class="pb__20">
+                  Companies should examine the end effector like gripper,
+                  welder, screwdriver, etc. and payload weight because even if
+                  the
+                  <a href="https://risagrobotics.com/" style="color: #9b9b9b">Cobots</a>
+                  itself is safe, the attached tool can introduce hazards such
+                  as sharp edges, heat exposure or excessive force and this is
+                  why business should install proper tooling design that
+                  significantly reduces injury risks.
+                </p>
+
+                <h6 class="headtext">Safety Features Verification</h6>
+               <p class="pb__20">
+                  Businesses should verify built-in safety features such as
+                  force limiting controls, emergency stop buttons, safety
+                  rated monitored stops, speed and separation monitoring and
+                  protective stops and also developers must test these systems
+                  before full scale deployment to ensure they function
+                  correctly under real conditions.
+                </p>
+
+                <h6 class="headtext">
+                  Electrical and Mechanical Safety Inspection
+                </h6>
+              <p class="pb__20">
+                  Businesses should inspect the cobot’s wiring, grounding
+                  systems, mechanical joints and cable management is important
+                  to keep good management of cables because loose cables can
+                  cause tripping hazards or electrical faults. Proper
+                  mechanical installation gives stable performance and
+                  prevents unexpected movement or structural failures.
+                </p>
+
+                <h6 class="headtext">
+                  Compliance with Safety Standards and Regulations
+                </h6>
+                <p class="pb__20">
+                  Companies should check that their deployment of the Cobot is
+                  aligned with relevant standards such as ISO 12100, ISO 10218
+                  and ISO/TS 15066. In some regions, there may be additional
+                  local regulations and also the documentations of the cobot
+                  must be maintained to demonstrate compliance during audits
+                  or inspections.
+                </p>
+
+                <h6 class="headtext">Employee Training and Awareness</h6>
+               <p class="pb__20">
+                  Operators and nearby workers to the
+                  <a href="https://risagrobotics.com/" style="color: #9b9b9b">cobot</a>
+                  must be trained about the cobot’s functionality, emergency
+                  procedures and safe interaction protocols. Lack of training
+                  causes most of the industrial accidents and regular
+                  refresher sessions can strengthen workplace safety culture.
+                </p>
+
+                <h6 class="headtext">
+                  Emergency Planning and Response Strategy
+                </h6>
+               <p class="pb__20">
+                  Businesses should set up a clear emergency response plan in
+                  case of malfunction or unexpected behaviour that includes
+                  shutdown procedures, reporting mechanisms and
+                  responsibilities. Also, clearly marked emergency stops and
+                  accessible control panels are essential.
+                </p>
+
+                <h6 class="headtext">Performance Testing and Simulation</h6>
+            <p class="pb__20">
+                  Before the live production of the Cobot, certain steps like conduct simulation tests and pilot runs
+                  which monitor the Cobot’s speed, accuracy, repeatability and safety performance. Sometimes
+                  cobots can pose real world risks and that's why simulations help detect programming errors or
+                  unsafe moments before anything is done in the real world.
+
+
+                </p>
+
+                <h4 class="headtext">Overview of Cobot Uses and Their Risk
+                  Considerations
+                </h4>
+               <p class="pb__20">
+                  Cobots are getting more and more in number and are used across various industries right now
+                  due to the flexibility and ease of integration. Below are some common uses and included risk
+                  factors.
+
+                </p>
+
+                <h6 class="headtext">Assembly Operations</h6>
+            <p class="pb__20">
+                  Cobots help in assembling small components with high precision but there are included risks
+                  such as repetitive motion stress for workers and tool related injury and that's why proper
+                  ergonomic planning is important for smooth collaboration. </p>
+
+                <h6 class="headtext">Material Handling
+                </h6>
+             <p class="pb__20">
+                  Cobots reduce worker strain because they move heavy or repetitive loads but dropping
+                  payloads or improper grip strength can cause hazards so secure gripping mechanisms and
+                  payload validation is a must.
+                </p>
+
+                <h6 class="headtext">Welding Applications</h6>
+                <p class="pb__20">
+                  Cobots can perform welding with consistent quality but there are included risks such
+                  as
+                  exposure to heat, sparks and fumes. Protective barriers and ventilation systems are important in
+                  such setups.</p>
+
+                <h6 class="headtext">Packaging and Palletizing</h6>
+                <p class="pb__20">Cobots can automate packaging tasks efficiently but there are included risks like
+                  collisions
+                  during repetitive stacking operations. To minimize these hazards, proper speed and control and
+                  spatial planning must be settled.
+                </p>
+
+                <h6 class="headtext">Quality Inspection</h6>
+                <p class="pb__20">Cobots can inspect products for defects by using integrated vision systems but
+                  electrical
+                  components and camera systems must be shielded properly to avoid malfunction or shock risks.
+                </p>
+
+                <h6 class="headtext">Machine Tending</h6>
+                <p class="pb__20">Cobots can load and unload machines like CNC equipment but there are risks involved
+                  like
+                  entanglement or accidental machine cavitation but interlocked safety systems can reduce these
+                  dangers.</p>
+
+                <h6 class="headtext">Pharmaceutical and Laboratory Tasks</h6>
+                <p class="pb__20">Cobots can handle delicate tasks like lab tasks and contamination risks must be
+                  controlled
+                  through sterile procedures and environmental controls.
+                </p>
+
+                <h6 class="headtext">Food Processing
+                </h6>
+                <p class="pb__20">Cobots help in the packaging of hygienic food and sorting it but regular sanitation
+                  checks and
+                  food grade materials are necessary to maintain compliance.
+                </p>
+
+                <h4 class="headtext">Best Practices for Safe Deployment:</h4>
+                <ul>
+                  <li> By conducting periodic safety audits after roll out.</li>
+                  <li> By documenting all risk assessments including updates.</li>
+                  <li> By involving cross functional teams (engineering, safety, operations).</li>
+                  <li> By reviewing the cobot’s software updates before installation.</li>
+                  <li> By looking at preventive maintenance schedules.</li>
+                </ul>
+
+                <p class="pb__20">Safety is a process which includes operational changes.
+                </p>
+
+                <h4 class="headtext">Conclusion</h4>
+                <p class="pt__15">By following structured checklists and through risk assessment, deploying a cobot can
+                  significantly improve the productivity, flexibility and operational efficiency and also when it
+                  covers workspace analysis, human interaction, safety features and regulatory compliance,
+                  businesses can ensure a successful and safe Cobot integration in their company. A proactive
+                  approach to risk management to transform cobots from simple automation tools into reliable
+                  collaborative partners in the workplace. Still have questions? Why not reach the team at <a
+                    href="https://risagrobotics.com/" style="color: #9b9b9b">RISAG</a> and get all your questions
+                  answered !
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-lg-4">
+          <div class="service__details__right">
+            <div class="common__item">
+              <h5 class="title">Recent Blogs</h5>
+              <div class="recent__wrap">
+                <a href="introducing-the-hcr-10l-a-long-reach-collaborative-robot-for-smart-manufacturing"
+                  class="recent__items">
+                  <span class="thumb">
+                    <img
+                      src="../assets/img/blogs/introducing-the-hcr-10l-a-long-reach-collaborative-robot-for-smart-manufacturing.jpg"
+                      alt="img" />
+                  </span>
+                  <div class="recent__content">
+                    <h6>
+                      Introducing the HCR-10L: A Long-Reach Collaborative
+                      Robot for Smart Manufacturing
+                    </h6>
+                    <span class="recent__btn">
+                      <span> Read More </span>
+                      <span class="icon">
+                        <i class="material-symbols-outlined">
+                          arrow_right_alt
+                        </i>
+                      </span>
+                    </span>
+                  </div>
+                </a>
+                <a href="getting-to-know-the-hcr-14-a-heavy-duty-cobot-for-tough-industrial-tasks"
+                  class="recent__items">
+                  <span class="thumb">
+                    <img src="../assets/img/blogs/Heavy-duty-cobots.jpg" alt="img" />
+                  </span>
+                  <div class="recent__content">
+                    <h6>
+                      Getting to Know the HCR-14: A Heavy-Duty Cobot for Tough
+                      Industrial Tasks
+                    </h6>
+                    <span class="recent__btn">
+                      <span> Read More </span>
+                      <span class="icon">
+                        <i class="material-symbols-outlined">
+                          arrow_right_alt
+                        </i>
+                      </span>
+                    </span>
+                  </div>
+                </a>
+                <a href="cobots-vs-traditional-robots-which-offers-better-productivity-gains" class="recent__items">
+                  <span class="thumb">
+                    <img
+                      src="../assets/img/blogs/cobots-vs-traditional-robots-which-offers-better-productivity-gains.jpg"
+                      alt="img" />
+                  </span>
+                  <div class="recent__content">
+                    <h6>
+                      Cobots vs Traditional Robots: Which Boosts Productivity?
+                    </h6>
+                    <span class="recent__btn">
+                      <span> Read More </span>
+                      <span class="icon">
+                        <i class="material-symbols-outlined">
+                          arrow_right_alt
+                        </i>
+                      </span>
+                    </span>
+                  </div>
+                </a>
+                <a href="ai-and-cobots-the-future-of-smart-manufacturing" class="recent__items">
+                  <span class="thumb">
+                    <img src="../assets/img/blogs/AI and Cobots The Future of Smart Manufacturing.jpg" alt="img" />
+                  </span>
+                  <div class="recent__content">
+                    <h6>AI and Cobots: The Future of Smart Manufacturing</h6>
+                    <span class="recent__btn">
+                      <span> Read More </span>
+                      <span class="icon">
+                        <i class="material-symbols-outlined">
+                          arrow_right_alt
+                        </i>
+                      </span>
+                    </span>
+                  </div>
+                </a>
+                <a href="how-collaborative-robots-can-improve-productivity-in-your-industry" class="recent__items">
+                  <span class="thumb">
+                    <img
+                      src="../assets/img/blogs/How Collaborative Robots can improve Productivity in your Industry.jpg"
+                      alt="img" />
+                  </span>
+                  <div class="recent__content">
+                    <h6>How Collaborative Robots Can Improve productivity</h6>
+                    <span class="recent__btn">
+                      <span> Read More </span>
+                      <span class="icon">
+                        <i class="material-symbols-outlined">
+                          arrow_right_alt
+                        </i>
+                      </span>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--container-->
+  </section>
+  <!-- Blog Details End -->
+
+  <!-- Footer Here -->
+  <footer class="footer__section">
+    <div class="social-media-icon">
+      <a class="wa-icon" href="https://api.whatsapp.com/send?phone=+971508993781&text=Hello from RISAG Robotics!.">
+        <img src="../assets/img/icons/whatsapp-new.png" alt="" /></a>
+      <a href="tel:+971565442665">
+        <img src="../assets/img/icons/phone-new.png" alt="" /></a>
+      <a href="mailto:info@risag.ae">
+        <img src="../assets/img/icons/email-new.png" alt="" /></a>
+    </div>
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__top">
+          <div class="row g-5">
+            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-10 col-sm-6">
+              <div class="footer__widget">
+                <div class="widget__head">
+                  <a href="index" class="footer__logo">
+                    <img src="../assets/img/logo/logo-white.png" alt="logo" />
+                  </a>
+                </div>
+                <p class="pb__20">
+                  The leading Robotics supplier of the UAE, offering advanced
+                  collaborative robots.
+                </p>
+                <ul class="social">
+                  <li>
+                    <a href="https://www.facebook.com/people/RISAG-Robotics/61577308035935/" class="social__item"
+                      target="_blank">
+                      <span class="icon">
+                        <img src="../assets/img/svg-icon/facebook.png" alt="facebook" />
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/risag_robotics/" class="social__item social__itemtwo"
+                      target="_blank">
+                      <span class="icon">
+                        <img src="../assets/img/svg-icon/instagram.svg" alt="instagram" />
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/company/risag-robotics/about/"
+                      class="social__item social__itemfour" target="_blank">
+                      <span class="icon">
+                        <img src="../assets/img/svg-icon/linkedin.png" alt="linkedin" />
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://x.com/RisagRobotics" class="social__item social__itemfour" target="_blank">
+                      <span class="icon">
+                        <img src="../assets/img/svg-icon/twitter.svg" alt="twitter" />
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/@RisagRobotics" class="social__item social__itemthree"
+                      target="_blank">
+                      <span class="icon">
+                        <img src="../assets/img/svg-icon/youtube.png" alt="youtube" />
+                      </span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="https://api.whatsapp.com/send?phone=+971508993781&text=Hello from RISAG Robotics!."
+                      target="_blank" class="social__item social__itemfour">
+                      <span class="icon">
+                        <img src="../assets/img/svg-icon/whatsapp.png" alt="whatsapp" />
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-0 col-sm-0"></div>
+
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+              <div class="footer__widget">
+                <div class="widget__head">
+                  <h4>Quick Links</h4>
+                </div>
+                <div class="widget__link">
+                  <a href="about" class="link"> About us </a>
+                  <a href="gallery" class="link"> Gallery </a>
+                  <a href="blog" class="link"> Blogs </a>
+                  <a href="contact" class="link"> Contact Us </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+              <div class="footer__widget">
+                <div class="widget__head">
+                  <h4>Contact</h4>
+                </div>
+                <div class="widget__link">
+                  <a class="footer__contact__items">
+                    <span class="icon iconthree">
+                      <span class="material-symbols-outlined">
+                        pin_drop
+                      </span>
+                    </span>
+                    <span class="fcontact__content">
+                      Risag Robotics <br />
+                      OFFICE NO. LV-27D, PO BOX 42167, <br />
+                      HAMRIYAH FREE ZONE, PHASE 2, <br />
+                      Sharjah, UAE
+                    </span>
+                  </a>
+
+                  <a href="tel:+971565442665" class="footer__contact__items">
+                    <span class="icon">
+                      <i class="material-symbols-outlined"> add_call </i>
+                    </span>
+                    <span class="fcontact__content"> +971 56 544 2665 </span>
+                  </a>
+                  <a href="mailto:info@risag.ae" class="footer__contact__items">
+                    <span class="icon icontwo">
+                      <i class="material-symbols-outlined">
+                        mark_as_unread
+                      </i>
+                    </span>
+                    <span class="fcontact__content">
+                      <span class="__cf_email__" data-cfemail="45203d242835292005203d24283529206b262a28">
+                        info@risag.ae
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>
+        Copyright &copy;2025
+        <a href="https://risag.ae" class="intellicon"> Risag Robotics </a>.
+        Designed By
+        <a href="https://girafcreatives.com/in" target="_blank" class="theme">girafcreatives</a>
+      </p>
+    </div>
+    <!--footer mask-->
+    <div class="footer__mask">
+      <img src="../assets/img/elements/box-element.png" alt="mask" />
+    </div>
+    <!--footer mask-->
+  </footer>
+  <!-- Footer End -->
+
+  <!--Jquery 3 6 0 Min Js-->
+  <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="../assets/js/jquery-3.6.0.min.js"></script>
+  <!-- <script src="/assets/js/jquery-3.6.0.min.js"></script> -->
+
+  <!--Bootstrap bundle Js-->
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <!--Viewport Jquery Js-->
+  <script src="../assets/js/viewport.jquery.js"></script>
+  <!--Odometer min Js-->
+  <script src="../assets/js/odometer.min.js"></script>
+  <!--Magnifiw Popup Js-->
+  <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+  <!--Wow min Js-->
+  <script src="../assets/js/wow.min.js"></script>
+  <!--Owl carousel min Js-->
+  <script src="../assets/js/owl.carousel.min.js"></script>
+  <!--Prijm Js-->
+  <script src="../assets/js/prism.js"></script>
+  <!--main Js-->
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
