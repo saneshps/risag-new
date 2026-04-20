@@ -395,58 +395,90 @@ $(document).ready(function () {
 	const goBack = menu.querySelector(".go-back");
 	const menuTrigger = document.querySelector(".mobile-menu-trigger");
 	const closeMenu = menu.querySelector(".mobile-menu-close");
-	let subMenu;
-	menuMain.addEventListener("click", (e) =>{
-		if(!menu.classList.contains("active")){
-			return;
+	let subMenuStack = [];
+
+	menuMain.addEventListener("click", (e) => {
+		if (!menu.classList.contains("active")) return;
+
+		const hasChildren = e.target.closest(".menu-item-has-children");
+		if (hasChildren) {
+			// Only open sub-menu when clicking the direct trigger <a>, not a link inside the sub-menu
+			const triggerAnchor = hasChildren.querySelector(":scope > a");
+			if (triggerAnchor && triggerAnchor.contains(e.target)) {
+				showSubMenu(hasChildren);
+			}
 		}
-	  if(e.target.closest(".menu-item-has-children")){
-		   const hasChildren = e.target.closest(".menu-item-has-children");
-		 showSubMenu(hasChildren);
-	  }
 	});
-	goBack.addEventListener("click",() =>{
-		 hideSubMenu();
-	})
-	menuTrigger.addEventListener("click",() =>{
-		 toggleMenu();
-	})
-	closeMenu.addEventListener("click",() =>{
-		 toggleMenu();
-	})
-	document.querySelector(".menu-overlay").addEventListener("click",() =>{
+
+	goBack.addEventListener("click", () => {
+		hideSubMenu();
+	});
+
+	menuTrigger.addEventListener("click", () => {
 		toggleMenu();
-	})
-	function toggleMenu(){
+	});
+
+	closeMenu.addEventListener("click", () => {
+		toggleMenu();
+	});
+
+	document.querySelector(".menu-overlay").addEventListener("click", () => {
+		toggleMenu();
+	});
+
+	function toggleMenu() {
 		menu.classList.toggle("active");
 		document.querySelector(".menu-overlay").classList.toggle("active");
-	}
-	function showSubMenu(hasChildren){
-	   subMenu = hasChildren.querySelector(".sub-menu");
-	   subMenu.classList.add("active");
-	   subMenu.style.animation = "slideLeft 0.5s ease forwards";
-	   const menuTitle = hasChildren.querySelector("i").parentNode.childNodes[0].textContent;
-	   menu.querySelector(".current-menu-title").innerHTML=menuTitle;
-	   menu.querySelector(".mobile-menu-head").classList.add("active");
-	}
-   
-	function  hideSubMenu(){  
-	   subMenu.style.animation = "slideRight 0.5s ease forwards";
-	   setTimeout(() =>{
-		  subMenu.classList.remove("active");	
-	   },300); 
-	   menu.querySelector(".current-menu-title").innerHTML="";
-	   menu.querySelector(".mobile-menu-head").classList.remove("active");
-	}
-	
-	window.onresize = function(){
-		if(this.innerWidth >991){
-			if(menu.classList.contains("active")){
-				toggleMenu();
-			}
-   
+		// Reset all sub-menu state when closing the mobile menu
+		if (!menu.classList.contains("active")) {
+			subMenuStack.forEach(sm => {
+				sm.classList.remove("active");
+				sm.style.animation = "";
+			});
+			subMenuStack = [];
+			menu.querySelector(".current-menu-title").innerHTML = "";
+			menu.querySelector(".mobile-menu-head").classList.remove("active");
 		}
 	}
+
+	function showSubMenu(hasChildren) {
+		const sm = hasChildren.querySelector(":scope > .sub-menu");
+		if (!sm) return;
+		sm.classList.add("active");
+		sm.style.animation = "slideLeft 0.5s ease forwards";
+		const triggerLink = hasChildren.querySelector(":scope > a");
+		const menuTitle = triggerLink ? triggerLink.childNodes[0].textContent.trim() : "";
+		menu.querySelector(".current-menu-title").innerHTML = menuTitle;
+		menu.querySelector(".mobile-menu-head").classList.add("active");
+		subMenuStack.push({ sm, menuTitle });
+	}
+
+	function hideSubMenu() {
+		if (subMenuStack.length === 0) return;
+		const current = subMenuStack.pop();
+		current.sm.style.animation = "slideRight 0.5s ease forwards";
+		setTimeout(() => {
+			current.sm.classList.remove("active");
+		}, 300);
+
+		if (subMenuStack.length === 0) {
+			// Back to main menu
+			menu.querySelector(".current-menu-title").innerHTML = "";
+			menu.querySelector(".mobile-menu-head").classList.remove("active");
+		} else {
+			// Restore parent level title
+			const parent = subMenuStack[subMenuStack.length - 1];
+			menu.querySelector(".current-menu-title").innerHTML = parent.menuTitle;
+		}
+	}
+
+	window.onresize = function () {
+		if (this.innerWidth > 991) {
+			if (menu.classList.contains("active")) {
+				toggleMenu();
+			}
+		}
+	};
 
 	
 

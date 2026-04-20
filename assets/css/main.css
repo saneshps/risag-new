@@ -1925,6 +1925,10 @@ p {
   position: relative;
   z-index: 99;
 }
+.header-testting-wrap .header .header-box { 
+      width: 92%;
+    margin: 0 auto;
+}
 
 .header-testting-wrap .header .logo-menu .logo {
   max-width: 200px;
@@ -2009,7 +2013,7 @@ p {
 .header-testting-wrap .header .menu>ul>li {
   display: inline-block;
   line-height: 50px;
-  margin-left: 40px;
+  margin-left: 30px;
 }
 
 .menu-fixed .header-testting-wrap .header .menu>ul>li>a {
@@ -2022,7 +2026,7 @@ p {
 }
 
 .header-testting-wrap .header .menu>ul>li>a {
-  font-size: 16px !important;
+  font-size: 15px !important;
   font-weight: 500;
   color: #000 !important;
   position: relative;
@@ -16474,9 +16478,18 @@ p {
   }
 }
 
-@media only screen and (min-width : 1900px) and (max-width : 2800px) {}
+@media only screen and (min-width : 1900px) and (max-width : 2800px) {
 
-@media only screen and (min-width : 1281px) and (max-width : 1370px) {}
+  .header-testting-wrap .header .menu>ul>li>a {
+  font-size: 15px !important; 
+}
+}
+
+@media only screen and (min-width : 1281px) and (max-width : 1370px) {
+    .header-testting-wrap .header .menu>ul>li>a {
+  font-size: 14px !important; 
+}
+}
 
 @media (min-width: 1024px) {
   .menu-fixed .header-testting-wrap .header .logo-menu .logo.scrll .phn {
@@ -16604,4 +16617,125 @@ p {
     display: none;
   }
 
+}
+
+/* =============================================
+   Second-Level (Nested) Submenu Styles
+   ============================================= */
+
+/* Arrow icon inside nested parent link */
+.header-testting-wrap .header .menu>ul>li .sub-menu ul li.menu-item-has-children > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #333;
+}
+
+.header-testting-wrap .header .menu>ul>li .sub-menu ul li.menu-item-has-children > a i {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+/* ---- Desktop: flyout to the right ---- */
+@media (min-width: 992px) {
+  /* Make the nested li a positioning context (desktop only) */
+  .header-testting-wrap .header .menu>ul>li .sub-menu ul li.menu-item-has-children {
+    position: relative;
+  }
+
+  /* Hide nested sub-menus initially (override the parent hover cascade) */
+  .header-testting-wrap .header .menu>ul>li .sub-menu ul li.menu-item-has-children .sub-menu {
+    position: absolute;
+    top: -20px;
+    left: 110%;
+    margin-top: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    min-width: 220px;
+    box-shadow: -11px 4px 70px -25px rgb(0 0 0 / 44%);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  /* Show nested sub-menu on hover of its parent li */
+  .header-testting-wrap .header .menu>ul>li .sub-menu ul li.menu-item-has-children:hover > .sub-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Rotate arrow icon on hover */
+  .header-testting-wrap .header .menu>ul>li .sub-menu ul li.menu-item-has-children:hover > a i {
+    transform: rotate(-90deg);
+  }
+}
+
+/* ---- Mobile: drill-down ---- */
+@media (max-width: 991px) {
+
+  /* Mobile-menu-head always floats above everything inside .menu */
+  .header-testting-wrap .header .mobile-menu-head {
+    position: relative;
+    z-index: 50;
+    background-color: #000;
+  }
+
+  /* Nested sub-menu: covers the full .menu panel, stays in same stacking context */
+  .header-testting-wrap .header .menu>ul>li .sub-menu ul li.menu-item-has-children .sub-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000 !important;
+    background-image: none !important;
+    padding: 65px 15px 15px;
+    overflow-y: auto;
+    display: none;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-top: 0 !important;
+    box-shadow: none;
+    z-index: 5;
+  }
+
+  .header-testting-wrap .header .menu>ul>li .sub-menu ul li.menu-item-has-children .sub-menu.active {
+    display: block;
+  }
+
+  /* First-level sub-menu trigger items (AI COBOT, AI COBOT S) — dark text on white panel */
+  .header-testting-wrap .header .menu>ul>li .sub-menu > ul > li.menu-item-has-children > a {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    color: var(--themetext) !important;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .header-testting-wrap .header .menu>ul>li .sub-menu > ul > li.menu-item-has-children > a i {
+    color: var(--base);
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  /* Second-level sub-menu links — white text on black panel */
+  .header-testting-wrap .header .menu>ul>li .sub-menu ul li.menu-item-has-children .sub-menu ul li > a {
+    color: #fff !important;
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    padding: 0 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
 }
