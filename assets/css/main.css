@@ -2701,7 +2701,11 @@ p {
 
 .banner__section {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; 
+}
+.banner__section.inner-bnr { 
+  background: url(../img/banner/inner-banner.webp) no-repeat center center;
+  background-size: cover;
 }
 
 .banner__section .banner__bgmask {
@@ -3806,7 +3810,7 @@ p {
 }
 
 .breadcumnd__wrapper .breadcumnd__content .title {
-  color: #000;
+  color: #fff;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -3847,7 +3851,7 @@ p {
 .breadcumnd__wrapper .breadcumnd__content .breadcumnd__list li a {
   font-size: 1rem;
   line-height: 1.5rem;
-  color: #000;
+  color: #fff;
 }
 
 .breadcumnd__wrapper .breadcumnd__content .breadcumnd__list li .icon {
@@ -3857,7 +3861,7 @@ p {
 
 .breadcumnd__wrapper .breadcumnd__content .breadcumnd__list li .icon i {
   font-size: 20px;
-  color: #000;
+  color: #fff;
 }
 
 .breadcumnd__wrapper .breadcumnd__content .breadcumnd__list .sucess {
@@ -6950,6 +6954,26 @@ p {
 .describtion__reviews {
   padding: 0px;
 }
+.describtion__reviews .gallery-tab 
+{
+  display: flex;
+  overflow-x: auto; 
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border: none;
+}
+.describtion__reviews .gallery-tab .nav-link
+{
+    border: 1px solid #ccc;
+    padding: 10px 40px;
+}
+.describtion__reviews .gallery-tab .nav-link h5
+{
+   font-size: 18px;
+   font-weight: 500;
+}
 
 .describtion__reviews .express-intrest .modal-content {
   padding: 15px 10px;
@@ -6986,6 +7010,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.fancybox-image, .fancybox-spaceball { 
+    height: 100%; 
+    background: #fff !important;
+    border-radius: 12px;
+    padding: 10px;
 }
 
 @media (max-width: 500px) {
@@ -14929,9 +14960,13 @@ p {
 }
 
 @media (max-width: 575px) {
+
+
   .payment__success__inner {
     padding: 15px;
   }
+
+
 }
 
 .payment__save {
@@ -15471,15 +15506,15 @@ p {
 
 .contact__section {
   position: relative;
-  background: #000000;
+  background: #dfdfdf;
 }
 
 .contact__section .section__header h2 {
-  color: #fff;
+  color: #333;
 }
 
 .contact__section .section__header p {
-  color: #fff;
+  color: #333;
 }
 
 .contact__section::before {
@@ -16285,6 +16320,11 @@ p {
   margin: 10px 0 0 0;
   text-align: center;
 }
+.gallery__section .gallery__item h5 a
+{
+  color: #000;
+  text-decoration: none;
+}
 
 .gallery__section .gallery__item img {
   width: 100%;
@@ -16538,6 +16578,10 @@ p {
 
 @media only screen and (min-width : 1024px) and (max-width : 1280px) {
 
+  .gallery__section .gallery__item {
+    margin: 0 0px 30px 0px;
+}
+
   .specification-area .spec-box {
     padding: 0;
   }
@@ -16580,6 +16624,10 @@ p {
 
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
 
+  .gallery__section .gallery__item {
+    margin: 0 0px 30px 0px;
+}
+
   .specification-area .catelouge-box .nav-tabs h5 {
     font-size: 15px;
     margin: 0;
@@ -16617,6 +16665,29 @@ p {
 }
 
 @media only screen and (min-width : 150px) and (max-width : 767px) {
+
+    .describtion__reviews .gallery-tab { 
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    border: none;
+}
+.describtion__reviews .gallery-tab .nav-link { 
+    padding: 8px 25px;
+}
+
+.describtion__reviews .gallery-tab .nav-link h5
+{
+  font-size: 16px;
+  font-weight: 500; 
+}
+  .gallery__section .gallery__item {
+    margin: 0 !important;
+  }
+
+  .gallery__section .container
+  {
+    max-width: 100%;
+  }
 
   .ladies__thumb {
     padding: 0 0 30px 0;
