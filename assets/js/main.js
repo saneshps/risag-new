@@ -402,10 +402,26 @@ $(document).ready(function () {
 
 		const hasChildren = e.target.closest(".menu-item-has-children");
 		if (hasChildren) {
-			// Only open sub-menu when clicking the direct trigger <a>, not a link inside the sub-menu
+			const sm = hasChildren.querySelector(":scope > .sub-menu");
+			if (!sm) return;
+
+			// Check if click was on the direct <a> or the direct <i> (arrow icon)
 			const triggerAnchor = hasChildren.querySelector(":scope > a");
-			if (triggerAnchor && triggerAnchor.contains(e.target)) {
+			const triggerIcon = hasChildren.querySelector(":scope > i");
+
+			const isAnchorClick = triggerAnchor && triggerAnchor.contains(e.target);
+			const isIconClick = triggerIcon && triggerIcon.contains(e.target);
+
+			if (isIconClick) {
+				e.preventDefault();
 				showSubMenu(hasChildren);
+			} else if (isAnchorClick) {
+				const href = triggerAnchor.getAttribute("href");
+				if (!href || href === "#") {
+					e.preventDefault();
+					showSubMenu(hasChildren);
+				}
+				// If there's a valid href, let it navigate normally
 			}
 		}
 	});
