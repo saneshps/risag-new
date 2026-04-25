@@ -578,6 +578,7 @@ p {
 
 .header-top {
   padding: 8px 0;
+  background: #ccc;
 }
 
 .header-top .information {
@@ -871,7 +872,7 @@ p {
 }
 
 .five__work__items .icon img {
-  filter: brightness(25);
+  filter: brightness(0);
 }
 
 .common__body__section .common__body__head .nav .nav-item .nav-link.active {
@@ -7110,6 +7111,18 @@ p {
   color: var(--themetext);
   font-size: 16px;
   padding: 10px 10px;
+}
+
+.describtion__ul {
+  margin-left: 30px;
+  list-style-type: disc;
+  margin-bottom: 5px;
+}
+
+.describtion__ul li {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: var(--themetext);
 }
 
 .common__item {
