@@ -982,6 +982,18 @@ p {
   background: #162557;
 }
 
+.ai-content {
+  margin: 0 0 40px 0;
+      padding: 0;
+}
+
+.ai-content p {
+  color: var(--achackcion);
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+}
+
 .why-choose-p {
   width: 70%;
   margin: 0 auto;
@@ -1251,6 +1263,7 @@ p {
 .accordion__wrap .accordion-item:not(:last-child) {
   margin-bottom: 16px;
 }
+
 
 /* .accordion__wrap .accordion-item .accordion-header .accordion-button {
   background-color: #162557;
@@ -4270,6 +4283,11 @@ p {
 }
 
 @media (max-width: 575px) {
+
+  .ai-content p {
+    text-align: left;
+  }
+
   .about__thumb img {
     width: 100%;
     animation: none;
@@ -16566,7 +16584,283 @@ label.error {
   margin: 0 0 10px 0;
 }
 
+/* ===== Industry Applications Section ===== */
+.industry-app__section {
+  background: #ececec;
+  position: relative;
+  overflow: hidden;
+}
 
+
+
+.industry-app__section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/img/AI-Cobot/TM12.png");
+  background-repeat: space;
+  background-size: 130px;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.industry-app__section>.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Left Text ===== */
+.industry-app__subtitle {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #005C30;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.industry-app__desc {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: #333;
+}
+
+/* ===== Wheel Wrapper ===== */
+.industry-wheel__wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 700 / 560;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.industry-wheel__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Spin animation for the dashed inner ring */
+.iw-spin {
+  transform-origin: 350px 280px;
+  animation: iw-ring-spin 22s linear infinite;
+}
+
+@keyframes iw-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Center Robot ===== */
+.industry-wheel__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  z-index: 2;
+}
+
+.industry-wheel__center img {
+  width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 22px rgba(0, 92, 48, 0.28));
+  animation: iw-float 4s ease-in-out infinite;
+}
+
+@keyframes iw-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== Industry Cards ===== */
+.iw-card {
+  position: absolute;
+  width: 27%;
+  z-index: 3;
+  overflow: visible;
+  /* allows badge to stick out */
+  transition: transform .3s ease;
+}
+
+.iw-card:hover {
+  transform: scale(1.055);
+}
+
+.iw-card--ml:hover {
+  transform: translateY(-50%) scale(1.055);
+}
+
+.iw-card--mr:hover {
+  transform: translateY(-50%) scale(1.055);
+}
+
+.iw-card__photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 6px solid #747474;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.iw-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.iw-card:hover .iw-card__photo img {
+  transform: scale(1.09);
+}
+
+/* ===== Overlapping Badge ===== */
+.iw-badge {
+  position: absolute;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 3px 14px rgba(0, 100, 50, 0.38);
+  z-index: 5;
+}
+
+/* Left-side cards → badge on bottom-right (inner, toward robot) */
+.iw-badge--br {
+  bottom: -14px;
+  right: -8px;
+}
+
+/* Right-side cards → badge on bottom-left (inner) */
+.iw-badge--bl {
+  bottom: -14px;
+  left: -8px;
+}
+
+/* Bottom-left card → badge on top-right (inner) */
+.iw-badge--tr {
+  top: -14px;
+  right: 0;
+}
+
+/* Bottom-right card → badge on top-left (inner) */
+.iw-badge--tl {
+  top: -14px;
+  left: 0;
+}
+
+/* ===== Card Positions ===== */
+.iw-card--tl {
+  top: 5%;
+  left: 0%;
+}
+
+.iw-card--tr {
+  top: 1%;
+  right: 0%;
+}
+
+.iw-card--ml {
+  top: 50%;
+  left: -2%;
+  transform: translateY(-50%);
+}
+
+.iw-card--mr {
+  top: 50%;
+  right: -2%;
+  transform: translateY(-50%);
+}
+
+.iw-card--bl {
+  bottom: 4%;
+  left: 9%;
+}
+
+.iw-card--br {
+  bottom: 4%;
+  right: 7%;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1199px) {
+  .industry-wheel__wrapper {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 991px) {
+  .industry-wheel__wrapper {
+    max-width: 520px;
+  }
+
+  .iw-badge {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .industry-app__subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .industry-wheel__wrapper {
+    max-width: 460px;
+    margin-top: 24px;
+  }
+
+  .iw-card {
+    width: 25%;
+  }
+
+  .industry-app__subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .industry-wheel__wrapper {
+    max-width: 360px;
+  }
+
+  .iw-card {
+    width: 26%;
+  }
+
+  .iw-badge {
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+
+  .industry-wheel__center {
+    width: 17%;
+  }
+}
+
+@media (max-width: 420px) {
+  .industry-wheel__wrapper {
+    max-width: 310px;
+  }
+}
 
 .main__head {
   background: #000;
