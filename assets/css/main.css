@@ -464,6 +464,10 @@ p {
   font-family: "Georama", sans-serif !important;
 }
 
+.cobots-reliable {
+  margin-bottom: 60px;
+}
+
 .d-flex-all {
   justify-content: center;
   display: flex;
