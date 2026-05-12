@@ -11713,6 +11713,15 @@ p {
   flex-direction: row-reverse;
 }
 
+.product__faq .accordion-item .accordion-body ul {
+  padding: 10px 0;
+}
+
+.product__faq .accordion-item .accordion-body ul li {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
 
 .accordion__thumb .qustion {
   position: absolute;
@@ -15070,7 +15079,6 @@ label.error {
 }
 
 @media (max-width: 575px) {
-
 
   .payment__success__inner {
     padding: 15px;
