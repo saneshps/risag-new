@@ -678,7 +678,10 @@ $(document).ready(function () {
 		}
 	}
 
-	
+	// Express Interest modal — move to body so section stays behind backdrop
+	$(document).on('show.bs.modal', '.express-intrest .modal', function () {
+		$(this).appendTo('body');
+	});
 
 });
 

@@ -7072,6 +7072,96 @@ p {
   align-items: center;
 }
 
+/* Express Interest modal — about__section__five.bg__white stays behind popup */
+body.modal-open .about__section__five.bg__white {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.about__section__five .express-intrest .modal,
+body > #exampleModalCenter.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1060;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.about__section__five .express-intrest .modal .modal-dialog,
+body > #exampleModalCenter.modal .modal-dialog {
+  position: relative;
+  z-index: 1061;
+  pointer-events: auto;
+}
+
+.about__section__five .express-intrest .modal .modal-content,
+.about__section__five .express-intrest .modal .modal-body,
+body > #exampleModalCenter.modal .modal-content,
+body > #exampleModalCenter.modal .modal-body,
+.about__section__five .express-intrest .modal .modal-body .form-control,
+body > #exampleModalCenter.modal .modal-body .form-control,
+.about__section__five .express-intrest .modal .modal-body .g-recaptcha,
+body > #exampleModalCenter.modal .modal-body .g-recaptcha {
+  pointer-events: auto;
+}
+
+.about__section__five .express-intrest .modal .modal-content,
+body > #exampleModalCenter.modal .modal-content {
+  position: relative;
+  z-index: 1062;
+  background: #fff;
+  opacity: 1;
+}
+#exampleModalCenter.modal .modal-content .close 
+  {
+    font-size: 25px;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: none !important;
+    opacity: 1;
+    border: none !important;
+    padding: 3px 7px !important;
+    background: #050505;
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+.about__section__five .express-intrest .modal .modal-content,
+body > #exampleModalCenter.modal .modal-content #product_form .form-group {
+ margin-bottom: 15px;
+}
+.about__section__five .express-intrest .modal .modal-content,
+body > #exampleModalCenter.modal .modal-content #product_form .btn {
+  border: 1px solid #333;
+}
+.about__section__five .express-intrest .modal .modal-content,
+body > #exampleModalCenter.modal .modal-content #product_form .btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.about__section__five .express-intrest .modal .modal-body .form-control,
+body > #exampleModalCenter.modal .modal-body .form-control {
+  background-color: #fff;
+  opacity: 1;
+  color: #212529;
+}
+
+body.modal-open .modal-backdrop.show {
+  z-index: 1050;
+}
+
 .fancybox-image,
 .fancybox-spaceball {
   height: 100%;
