@@ -7043,6 +7043,11 @@ p {
   color: #333;
   font-size: 17px;
   border-radius: 6px;
+  border: 1px solid #333;
+}
+.describtion__reviews .express-intrest .btn:hover {
+  background: #000;
+  color: #fff; 
 }
 
 
@@ -7166,11 +7171,16 @@ p {
   list-style-type: disc;
   margin-bottom: 5px;
 }
+.describtion__reviews_h5
+{
+  color: #fff;
+  font-weight: 500;
+}
 
 .describtion__ul li {
   margin-bottom: 5px;
   font-size: 16px;
-  color: var(--themetext);
+  color: #fff;
 }
 
 .common__item {
