@@ -15860,8 +15860,7 @@ label.error {
 }
 
 .form_area #form .form-control input:focus {
-  outline: 0;
-  border: none;
+  outline: 0; 
 }
 
 .form_area #form .form-control.success input {
