@@ -14238,6 +14238,14 @@ body > #exampleModalCenter.modal .modal-content #product_form label.product-form
   border-radius: 5px;
   box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06);
 }
+.our-product-items .shop__items .content h4
+{
+  color: var(--themetext);
+  margin-bottom: 12px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
 
 .shop__items .thumb {
   background: #252626;
