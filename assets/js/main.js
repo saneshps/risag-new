@@ -683,7 +683,147 @@ $(document).ready(function () {
 		$(this).appendTo('body');
 	});
 
+	// Catalogue PDF previews (tablets/mobile cannot render PDF in iframes)
+	$(document).on('shown.bs.tab', '[data-bs-target="#profile"], #profile-tab', function () {
+		scheduleCataloguePdfPreviews();
+	});
+	if ($('#profile').hasClass('active')) {
+		scheduleCataloguePdfPreviews();
+	}
+
 });
+
+var cataloguePdfPreviewProcessed = new WeakSet();
+
+function scheduleCataloguePdfPreviews() {
+	requestAnimationFrame(function () {
+		setTimeout(initCataloguePdfPreviews, 50);
+	});
+}
+
+function initCataloguePdfPreviews() {
+	var profilePane = document.getElementById('profile');
+	if (profilePane && !profilePane.classList.contains('active') && !profilePane.classList.contains('show')) {
+		return;
+	}
+
+	var iframes = document.querySelectorAll(
+		'.specification-area .reviews__box .thumb iframe[src*=".pdf"]'
+	);
+	if (!iframes.length) {
+		return;
+	}
+
+	var pending = [];
+	iframes.forEach(function (iframe) {
+		if (cataloguePdfPreviewProcessed.has(iframe)) {
+			return;
+		}
+		var thumb = iframe.parentElement;
+		if (!thumb) {
+			return;
+		}
+		if (thumb.querySelector('.pdf-catalogue-preview')) {
+			return;
+		}
+		pending.push(iframe);
+	});
+
+	if (!pending.length) {
+		return;
+	}
+
+	loadPdfJs().then(function () {
+		pending.forEach(function (iframe) {
+			renderCataloguePdfPreview(iframe);
+		});
+	});
+}
+
+function loadPdfJs() {
+	if (window.pdfjsLib) {
+		return Promise.resolve();
+	}
+	if (window._cataloguePdfJsLoading) {
+		return window._cataloguePdfJsLoading;
+	}
+	var cdn = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+	window._cataloguePdfJsLoading = new Promise(function (resolve, reject) {
+		var script = document.createElement('script');
+		script.src = cdn + 'pdf.min.js';
+		script.onload = function () {
+			pdfjsLib.GlobalWorkerOptions.workerSrc = cdn + 'pdf.worker.min.js';
+			resolve();
+		};
+		script.onerror = reject;
+		document.head.appendChild(script);
+	});
+	return window._cataloguePdfJsLoading;
+}
+
+function renderCataloguePdfPreview(iframe) {
+	var thumb = iframe.parentElement;
+	var src = iframe.getAttribute('src');
+	if (!src || cataloguePdfPreviewProcessed.has(iframe)) {
+		return;
+	}
+
+	var pdfUrl;
+	try {
+		pdfUrl = new URL(src, window.location.href).href;
+	} catch (e) {
+		return;
+	}
+
+	cataloguePdfPreviewProcessed.add(iframe);
+
+	var preview = document.createElement('div');
+	preview.className = 'pdf-catalogue-preview';
+	preview.title = 'Open catalogue';
+	preview.addEventListener('click', function () {
+		window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+	});
+	var canvas = document.createElement('canvas');
+	preview.appendChild(canvas);
+	thumb.insertBefore(preview, iframe);
+	iframe.classList.add('pdf-catalogue-preview__iframe--hidden');
+
+	var containerWidth = thumb.clientWidth || thumb.offsetWidth || 320;
+	if (containerWidth < 50) {
+		containerWidth = 320;
+	}
+
+	pdfjsLib.getDocument({ url: pdfUrl, withCredentials: false }).promise
+		.then(function (pdf) {
+			return pdf.getPage(1);
+		})
+		.then(function (page) {
+			var baseViewport = page.getViewport({ scale: 1 });
+			var scale = containerWidth / baseViewport.width;
+			var viewport = page.getViewport({ scale: scale });
+			var context = canvas.getContext('2d');
+			canvas.width = viewport.width;
+			canvas.height = viewport.height;
+			return page.render({ canvasContext: context, viewport: viewport }).promise;
+		})
+		.catch(function () {
+			showCataloguePdfFallback(preview, canvas, pdfUrl);
+		});
+}
+
+function showCataloguePdfFallback(preview, canvas, pdfUrl) {
+	preview.classList.add('pdf-catalogue-preview--fallback');
+	if (canvas.parentNode === preview) {
+		preview.removeChild(canvas);
+	}
+	var link = document.createElement('a');
+	link.className = 'pdf-catalogue-preview__open';
+	link.href = pdfUrl;
+	link.target = '_blank';
+	link.rel = 'noopener noreferrer';
+	link.textContent = 'View catalogue';
+	preview.appendChild(link);
+}
 
 
 progressBar: () => {
