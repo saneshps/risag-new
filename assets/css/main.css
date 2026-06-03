@@ -13959,6 +13959,56 @@ label.error {
   color: var(--base);
 }
 
+/* Equal-height blog cards (Our Blogs — tablet & laptop) */
+@media (min-width: 768px) {
+  .blog__grid__section .row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch !important;
+  }
+
+  .blog__grid__section .row.g-4 > [class*="col-"] {
+    display: flex;
+    align-self: stretch;
+  }
+
+  .blog__grid__section .capabilities__items.blog__grid__items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .blog__grid__section .capabilities__items .content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  .blog__grid__section .capabilities__items .content .capa__more {
+    margin-top: auto;
+  }
+}
+
+/* Equal-height blog cards in blog details owl carousel */
+.blog__details__wrap.owl-carousel .owl-item .blog__grid__items {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.blog__details__wrap.owl-carousel .owl-item .blog__grid__items .content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.blog__details__wrap.owl-carousel .owl-item .blog__grid__items .content .capa__more {
+  margin-top: auto;
+}
+
 .blog__list__items {
   padding: 8px 8px 8px;
   border-color: var(--white);
@@ -14084,8 +14134,12 @@ label.error {
 
 .blog__details__wrap .owl-nav {
   position: absolute;
-  top: -100px;
   right: 0;
+  bottom: -40px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .blog__details__wrap .owl-nav button.owl-prev {
@@ -14138,9 +14192,25 @@ label.error {
 
 @media (max-width: 575px) {
   .blog__details__wrap .owl-nav {
-    position: initial;
-    display: flex;
+   
   }
+}
+
+/* Equal-height cards inside the "Key Applications of Cobots" owl carousel.
+   The owl stage is made a flex row so every owl-item stretches to the
+   tallest card; the card itself then fills that height via height:100%. */
+.blog__details__wrap.owl-carousel .owl-stage {
+  display: flex;
+}
+
+.blog__details__wrap.owl-carousel .owl-item {
+  display: flex;
+  height: auto;
+}
+
+.blog__details__wrap.owl-carousel .owl-item .shop__items {
+  flex: 1 1 auto;
+  height: auto;
 }
 
 .main__cart__wrap {
@@ -14225,7 +14295,7 @@ label.error {
 
 @media (max-width: 1199px) {
   .shop__items .content {
-    padding: 20px 10px;
+    padding: 0px 10px;
   }
 }
 
@@ -14444,6 +14514,9 @@ label.error {
 }
 
 @media (max-width: 1199px) {
+  .shop__items .content h4 { 
+    font-size: 17px; 
+}
   .shop__side__bar .cmn__items .Cart__wrap .shop__btn {
     gap: 10px;
   }
@@ -15530,6 +15603,10 @@ label.error {
 }
 
 @media (max-width: 575px) {
+  .shop__items .content h4
+  {
+    font-size: 16px;
+  }
   .typography__wrapper .body__text .body__text__item .md {
     font-size: 14px;
   }
