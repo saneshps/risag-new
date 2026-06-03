@@ -222,20 +222,17 @@
 
 
                                              <div class="form-group">
-                                                <input type="text" name="name" class="form-control required"
-                                                   placeholder="Name">
+                                                <input type="text" name="name" class="form-control" placeholder="Name" autocomplete="name" pattern="[A-Za-z]+(?:\s+[A-Za-z]+)*" title="Name must contain only letters and spaces.">
 
                                              </div>
 
                                              <div class="form-group">
-                                                <input type="email" name="email" class="form-control required"
-                                                   aria-describedby="emailHelp" placeholder="Email">
+                                                <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" autocomplete="email">
 
                                              </div>
 
                                              <div class="form-group">
-                                                <input type="tel" class="form-control required"
-                                                   placeholder="Phone Number" name="phone">
+                                                <input type="tel" class="form-control" placeholder="Phone Number" name="phone" autocomplete="tel" pattern="\+?[0-9]+" title="Phone number must contain only digits (optional + for country code).">
 
                                              </div>
 
@@ -645,65 +642,7 @@
    <script src="../assets/js/jquery.form.min.js"></script>
    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-   <script>
-      (function ($) {
-         $("#product_form").validate({
-            submitHandler: function (form) {
-               var form_btn = $(form).find('button[type="submit"]');
-               var form_result_div = '#form-result';
-               // alert('AFAS')
-               Swal.fire({
-                  title: 'Sending...',
-                  text: 'Please wait while we send your message.',
-                  allowOutsideClick: false,
-                  didOpen: () => {
-                     Swal.showLoading();
-                  }
-               });
-
-               form_btn.prop('disabled', true);
-
-               $(form).ajaxSubmit({
-                  url: 'send_product_mail.php',
-                  dataType: 'json',
-                  success: function (data) {
-                     Swal.close();
-
-                     form_btn.prop('disabled', false);
-                     if (data.status === 'success') {
-                        console.log('Form submitted successfully. Closing modal...');
-                        form.reset();
-                        $('#exampleModalCenter').modal('hide');  // this should now work
-                        $(form).trigger('reset');
-                        $(form).find('label.error').remove();
-                        Swal.fire({
-                           icon: 'success',
-                           title: 'Success!',
-                           text: data.message
-                        });
-                     } else {
-
-                        Swal.fire({
-                           icon: 'error',
-                           title: 'Oops...',
-                           text: data.message
-                        });
-                     }
-                  },
-                  error: function () {
-                     Swal.close();
-                     form_btn.prop('disabled', false);
-                     Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong. Please try again later.'
-                     });
-                  }
-               });
-            }
-         });
-      })(jQuery);
-   </script>
+   <script src="../assets/js/product-form-validate.js"></script>
 </body>
 
 

@@ -129,19 +129,24 @@
                         <div class="col-lg-6">
                            <div class="form-control">
                               <label for="name">Name</label>
-                              <input type="text" name="name" class="required" placeholder="Enter Your Name...">
+                              <input type="text" name="name" id="name" placeholder="Enter Your Name..."
+                                 autocomplete="name" pattern="[A-Za-z]+(?:\s+[A-Za-z]+)*"
+                                 title="Name must contain only letters and spaces.">
                            </div>
                         </div>
                         <div class="col-lg-6">
                            <div class="form-control">
                               <label for="email">Email</label>
-                              <input type="email" name="email" class="required" placeholder="Enter Your Email...">
+                              <input type="email" name="email" id="email" placeholder="Enter Your Email..."
+                                 autocomplete="email">
                            </div>
                         </div>
                         <div class="col-lg-6">
                            <div class="form-control">
                               <label for="phone">Phone</label>
-                              <input type="tel" name="phone" placeholder="Enter Your Number...">
+                              <input type="tel" name="phone" id="phone" placeholder="Enter Your Number..."
+                                 autocomplete="tel" pattern="\+?[0-9]+"
+                                 title="Phone number must contain only digits (optional + for country code).">
                            </div>
                         </div>
                         <div class="col-lg-6">
@@ -326,65 +331,7 @@
    <script src="assets/js/jquery.validate.min.js"></script>
    <script src="assets/js/jquery.form.min.js"></script>
 
-   <script>
-      (function ($) {
-         $("#form").validate({
-            submitHandler: function (form) {
-               var form_btn = $(form).find('button[type="submit"]');
-               var form_result_div = '#form-result';
-               // alert('AFAS')
-               Swal.fire({
-                  title: 'Sending...',
-                  text: 'Please wait while we send your message.',
-                  allowOutsideClick: false,
-                  didOpen: () => {
-                     Swal.showLoading();
-                  }
-               });
-
-               form_btn.prop('disabled', true);
-
-               $(form).ajaxSubmit({
-                  url: 'send_gmail.php',
-                  dataType: 'json',
-                  success: function (data) {
-                     Swal.close();
-
-                     form_btn.prop('disabled', false);
-                     if (data.status === 'success') {
-                        // alert('s')
-                        form.reset();
-                        //   $(form).find('.form-control').val('');
-                        Swal.fire({
-                           icon: 'success',
-                           title: 'Success!',
-                           text: data.message
-                        });
-                     } else {
-                        // alert('f')
-
-                        Swal.fire({
-                           icon: 'error',
-                           title: 'Oops...',
-                           text: data.message
-                        });
-                     }
-                  },
-                  error: function () {
-                     Swal.close();
-
-                     form_btn.prop('disabled', false);
-                     Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong. Please try again later.'
-                     });
-                  }
-               });
-            }
-         });
-      })(jQuery);
-   </script>
+   <script src="assets/js/contact-form-validate.js"></script>
 </body>
 
 

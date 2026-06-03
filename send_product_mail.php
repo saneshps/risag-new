@@ -38,10 +38,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name   = $_POST['name'];
-        $email   = $_POST['email'];
-        $phone   = $_POST['phone'];
-        $product   = $_POST['product'];
+        $name    = isset($_POST['name']) ? trim($_POST['name']) : '';
+        $email   = isset($_POST['email']) ? trim($_POST['email']) : '';
+        $phone   = isset($_POST['phone']) ? trim($_POST['phone']) : '';
+        $product = isset($_POST['product']) ? trim($_POST['product']) : '';
+
+        if ($name === '' || !preg_match('/^[A-Za-z]+(?:\s+[A-Za-z]+)*$/', $name)) {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Name must contain only letters and spaces.'
+            ]);
+            exit;
+        }
+
+        if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Please enter a valid email address.'
+            ]);
+            exit;
+        }
+
+        if ($phone === '' || !preg_match('/^\+?[0-9]+$/', $phone)) {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Phone number must contain only digits (optional + for country code).'
+            ]);
+            exit;
+        }
         // $service   = $_POST['service'];
         // $message = $_POST['message'];
         $subject = 'New product Enquiry From Risag';
