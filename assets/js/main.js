@@ -3,39 +3,33 @@
 $(document).ready(function () {
 
 	//--Owl Carousel--//
-	$(".capabilities__wrap").owlCarousel({
-		loop: true,
-		margin: 24,
-		autoplayTimeout: 1000,
-		autoplay: false,
-		nav: false,
-		dots: true,
-		responsiveClass: true,
-		navText: [
-			'<i class="material-symbols-outlined">chevron_left</i>',
-			'<i class="material-symbols-outlined">chevron_right</i>',
-		],
-		responsive: {
-			0: {
-				items: 1,
+	if (typeof Swiper !== "undefined" && document.querySelector(".blog__slider")) {
+		new Swiper(".blog__slider", {
+			slidesPerView: 1,
+			spaceBetween: 16,
+			loop: true,
+			grabCursor: true,
+			watchOverflow: true,
+			pagination: {
+				el: ".blog__slider-pagination",
+				clickable: true,
 			},
-			500: {
-				items: 1,
+			navigation: {
+				nextEl: ".blog__slider-next",
+				prevEl: ".blog__slider-prev",
 			},
-			767: {
-				items: 2,
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				1200: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+				},
 			},
-			991: {
-				items: 3,
-			},
-			1199: {
-				items: 3,
-			},
-			1399: {
-				items: 3,
-			},
-		},
-	});
+		});
+	}
 	$(".plan__wrapper").owlCarousel({
 		loop: true,
 		margin: 10,
