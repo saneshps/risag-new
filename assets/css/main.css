@@ -2513,6 +2513,7 @@ p {
   }
 
   .header-testting-wrap .header .menu .mobile-menu-head .go-back {
+    display: none;
     height: 50px;
     width: 50px;
     cursor: pointer;

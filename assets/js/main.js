@@ -426,9 +426,11 @@ $(document).ready(function () {
 		}
 	});
 
-	goBack.addEventListener("click", () => {
-		hideSubMenu();
-	});
+	if (goBack) {
+		goBack.addEventListener("click", () => {
+			hideSubMenu();
+		});
+	}
 
 	menuTrigger.addEventListener("click", () => {
 		toggleMenu();
