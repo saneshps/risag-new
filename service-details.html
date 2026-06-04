@@ -155,13 +155,13 @@
                         <form action="javascript:void(0)">
                            <div class="row g-4">
                               <div class="col-lg-6">
-                                 <input type="text" placeholder="Name">
+                                 <input type="text" pattern="[A-Za-z]+(?:\s+[A-Za-z]+)*" title="Name must contain only letters and spaces." placeholder="Name" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')">
                               </div>
                               <div class="col-lg-6">
-                                 <input type="email" placeholder="Email">
+                                 <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address." placeholder="Email">
                               </div>
                               <div class="col-lg-6">
-                                 <input type="phone" placeholder="Phone">
+                                 <input type="phone" maxlength="10" pattern="\d{10}" title="Please enter a valid 10-digit phone number." oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)"   placeholder="Phone">
                               </div>
                               <div class="col-lg-6">
                                  <input type="text" placeholder="Company">

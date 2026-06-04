@@ -17761,6 +17761,10 @@ body > #exampleModalCenter.modal .modal-content #product_form label.product-form
 
 @media only screen and (min-width : 150px) and (max-width : 767px) {
 
+  .banner__section.inner-bnr { 
+    height: auto;
+}
+
   .describtion__reviews .gallery-tab {
     flex-wrap: wrap;
     margin-bottom: 0px;
