@@ -9120,7 +9120,7 @@ body.modal-open .modal-backdrop.show {
   color: var(--themetext);
   font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .capabilities__items .content .capa__more {
@@ -13924,8 +13924,7 @@ body > #exampleModalCenter.modal .modal-content #product_form label.product-form
 
 .blog__grid__items .thumb img {
   transition: all 0.4s;
-  border-radius: 12px;
-  filter: grayscale(100%);
+  border-radius: 12px; 
 }
 
 .blog__grid__items .content h4 {
