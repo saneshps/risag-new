@@ -1159,7 +1159,12 @@
       function loadComponent(id, file) {
          fetch(file)
             .then(res => res.text())
-            .then(data => document.getElementById(id).innerHTML = data);
+            .then(data => {
+               document.getElementById(id).innerHTML = data;
+               if (id === 'header-placeholder' && typeof window.initMobileMenu === 'function') {
+                  window.initMobileMenu();
+               }
+            });
       }
 
       loadComponent('header-placeholder', 'header.html');

@@ -17760,6 +17760,9 @@ body > #exampleModalCenter.modal .modal-content #product_form label.product-form
 }
 
 @media only screen and (min-width : 150px) and (max-width : 767px) {
+  .footer__bottom p { 
+    padding: 0 10px;
+}
 
   .banner__section.inner-bnr { 
     height: auto;
