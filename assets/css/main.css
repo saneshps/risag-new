@@ -14575,10 +14575,14 @@ body > #exampleModalCenter.modal .modal-content #product_form label.product-form
 
 .shop__items .thumb img {
   border-radius: 5px;
-  width: 100%;
+  width: 60%;
   overflow: hidden;
   transition: all 0.4s;
   object-fit: contain;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .shop__items .content {
