@@ -14699,6 +14699,81 @@ body > #exampleModalCenter.modal .modal-content #product_form label.product-form
   }
 }
 
+/* Our Product (index) — compact card on all devices */
+.shop__section .our-product-items .row.g-4,
+.shop__section .our-product-items .row.g-4.d-flex-all,
+.shop__section .our-product-items .row.g-4.align-items-start {
+  align-items: flex-start !important;
+}
+
+.shop__section .our-product-items .row.g-4 > [class*="col-"] {
+  display: block; 
+}
+
+.shop__section .our-product-items .shop__items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shop__section .our-product-items .shop__items .thumb img {
+  width: 70%;
+}
+
+.shop__section .our-product-items .shop__items .content {
+  flex: 0 0 auto;
+  padding: 16px 16px 20px;
+  text-align: center;
+}
+
+.shop__section .our-product-items .shop__items .content .price__wrap,
+.shop__section .our-product-items .shop__items .content .price__wrap .price {
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.shop__section .our-product-items .shop__items .content .price__wrap .price,
+.shop__section .our-product-items .shop__items .content .price__wrap .price p {
+  text-align: center;
+}
+
+.shop__section .our-product-items .shop__items .content .shop__btn {
+  position: static;
+  margin-top: 12px;
+  padding-top: 0;
+}
+
+.shop__section .our-product-items .shop__items .content > a.cmn--btn {
+  margin-top: 12px;
+}
+
+@media (min-width: 1240px) and (max-width: 1399px) {
+  .shop__section .our-product-items .row.g-4 > [class*="col-"] {
+    display: block;
+    align-self: flex-start;
+  }
+
+  .shop__section .our-product-items .shop__items .content .price__wrap .price p {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .shop__section .our-product-items .shop__items {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 575px) {
+  .shop__section .our-product-items .shop__items {
+    max-width: 100%;
+  }
+}
+
 .shop__items .content .price__wrap .price_hide {
   color: var(--place2);
   font-size: 16px;
@@ -17016,7 +17091,7 @@ body > #exampleModalCenter.modal .modal-content #product_form label.product-form
 /* gallery area start */
 
 .gallery__section {
-  padding: 50px 0 50px;
+  padding: 90px 0 50px;
 }
 
 .gallery__section .gallery__item {
